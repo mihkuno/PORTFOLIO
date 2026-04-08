@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joeniño Cainday — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="public/styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="hero-glow"></div>
+<div class="hero-glow-2"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">JC<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-top">
+    <div class="hero-eyebrow" data-reveal data-delay="1">
+      Computer Scientist · USTP · Cagayan De Oro
+    </div>
+
+    <div class="hero-name-row" data-reveal data-delay="2">
+      <h1 class="hero-name">
+        Joeniño
+        <span class="line-3">Cainday</span>
+      </h1>
+      <img class="hero-avatar" src="public/me.png" alt="Joeniño D. Cainday" />
+    </div>
+
+    <div class="hero-desc-row" data-reveal data-delay="3">
+      <p class="hero-tagline">
+        Operations Research · Computational Modelling &amp; Simulation · Building at the edge of code and science.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">View Work</a>
+        <a href="#about" class="btn btn-outline">About Me</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-bottom" data-reveal data-delay="4">
+    <div class="hero-badge">
+      <div class="pulse-dot"></div>
+      Available for research &amp; collaboration
+    </div>
+    <a href="#about" class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<div class="section-wrap" id="about">
+  <div class="section-header" data-reveal>
+    <span class="section-num">01 —</span>
+    <h2 class="section-title">About <em>me</em></h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-text" data-reveal="left">
+      <p>Computer Science student at the <strong>University of Science and Technology of Southern Philippines</strong>, driven by curiosity and continuous learning.</p>
+      <p>Focused on <strong>computational modeling, simulation, and optimization</strong>, applying theory to real-world problems.</p>
+      <div class="about-stats">
+        <div class="stat-item" data-reveal data-delay="2">
+          <div class="stat-num">4th</div>
+          <div class="stat-label">Year — BS Computer Science</div>
+        </div>
+        <div class="stat-item" data-reveal data-delay="1">
+          <div class="stat-num">100+</div>
+          <div class="stat-label">Commissioned Projects</div>
+        </div>
+        <div class="stat-item" data-reveal data-delay="3">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Tech Stacks</div>
+        </div>
+        <div class="stat-item" data-reveal data-delay="4">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Years Coding</div>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="right">
+      <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;">Experience</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-icon">🎯</div>
+          <div>
+            <div class="exp-title">Asst. Core Lead — CS3</div>
+            <div class="exp-meta">Computer Science Student Society · Aug 2023 – Jul 2025</div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-icon">🌍</div>
+          <div>
+            <div class="exp-title">GIS Developer — GDSC USTP</div>
+            <div class="exp-meta">Google Developer Student Clubs · Sep 2023 – Aug 2024</div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-icon">💻</div>
+          <div>
+            <div class="exp-title">CS Lead — GDSC USTP</div>
+            <div class="exp-meta">Sep 2022 – Aug 2023 · Cagayan De Oro</div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-icon">🚀</div>
+          <div>
+            <div class="exp-title">Software Developer Intern — Autofy.ai</div>
+            <div class="exp-meta">Mar 2024 – Apr 2024 · 2 months</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<div id="skills" style="background:var(--bg2);">
+  <div class="section-wrap">
+    <div class="section-header" data-reveal>
+      <span class="section-num">02 —</span>
+      <h2 class="section-title">What I <em>bring</em></h2>
+    </div>
+
+    <div class="skills-layout">
+      <div class="skills-big-label">Skills</div>
+      <div>
+        <div class="skills-cats" data-reveal>
+          <div class="skill-cat">
+            <div class="skill-cat-label">Core CS</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Operations Research</span>
+              <span class="skill-tag">COP / CSP</span>
+              <span class="skill-tag">Computational Modelling</span>
+              <span class="skill-tag">Simulation</span>
+              <span class="skill-tag">Optimization</span>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">AI / ML</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Machine Learning</span>
+              <span class="skill-tag">Computer Vision</span>
+              <span class="skill-tag">RAG</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">OpenCV</span>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">Development</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Web Dev</span>
+              <span class="skill-tag">Mobile Dev</span>
+              <span class="skill-tag">SSR</span>
+              <span class="skill-tag">IoT</span>
+              <span class="skill-tag">Distributed Computing</span>
+              <span class="skill-tag">Web Scraping</span>
+              <span class="skill-tag">CTF</span>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-label">Geospatial</div>
+            <div class="skill-tags">
+              <span class="skill-tag">GIS</span>
+              <span class="skill-tag">Photogrammetry</span>
+              <span class="skill-tag">3D GIS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-row" data-reveal data-delay="2">
+          <div class="tech-row-label">Tech Stack</div>
+          <div class="tech-stack-grid" id="tech-stack-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<div class="section-wrap" id="education">
+  <div class="section-header" data-reveal>
+    <span class="section-num">03 —</span>
+    <h2 class="section-title">Academic <em>journey</em></h2>
+  </div>
+
+  <div class="edu-timeline">
+    <div class="edu-item" data-reveal data-delay="1">
+      <div class="edu-dot"></div>
+      <div class="edu-year">2022 – 2027</div>
+      <div class="edu-school">University of Science and Technology of Southern Philippines</div>
+      <div class="edu-degree">BS Computer Science — Computational Modelling and Simulation · 4th Year</div>
+      <div class="edu-activities">Google Developer Student Clubs · CS³ Academic Organization</div>
+      <span class="edu-honor">🏅 Dean's Lister</span>
+    </div>
+    <div class="edu-item" data-reveal data-delay="2">
+      <div class="edu-dot"></div>
+      <div class="edu-year">2021 – 2022</div>
+      <div class="edu-school">Iligan Computer Institute</div>
+      <div class="edu-degree">TVL ICT — Web Development · Grade 12</div>
+      <div class="edu-activities">Google Development Student Club – Xavier</div>
+      <span class="edu-honor">🏅 High Honor &amp; DOST Top 20 Finalist Award</span>
+    </div>
+    <div class="edu-item" data-reveal data-delay="3">
+      <div class="edu-dot"></div>
+      <div class="edu-year">2020 – 2021</div>
+      <div class="edu-school">Capitol University</div>
+      <div class="edu-degree">STEM — Programming · Grade 11</div>
+      <div class="edu-activities">Technology Literacy Club</div>
+      <span class="edu-honor">🏆 Highest Honor &amp; Student of the Year</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<div class="section-wrap" id="projects">
+  <div class="section-header" data-reveal>
+    <span class="section-num">04 —</span>
+    <h2 class="section-title">Selected <em>work</em></h2>
+  </div>
+  <div class="projects-grid" id="projects-container"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h3 class="footer-headline" data-reveal>Let's work<br><em>together.</em></h3>
+      <p class="footer-sub">Open for collaborations, research, and opportunities in CS &amp; OR.</p>
+      <div class="footer-links">
+        <a class="footer-link" target="_blank" href="https://github.com/mihkuno">GitHub</a>
+        <a class="footer-link" target="_blank" href="https://www.linkedin.com/in/mihkuno">LinkedIn</a>
+        <a class="footer-link" target="_blank" href="https://www.facebook.com/quaxode/">Facebook</a>
+        <a class="footer-link" target="_blank" href="mailto:caindayjoeninyo@gmail.com">Email</a>
+      </div>
+      <div style="margin-top:40px;font-size:11px;color:var(--text-muted);font-family:var(--ff-mono);">© 2025 Joeniño D. Cainday. All rights reserved.</div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-monogram">JC</div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lb-close">✕</button>
+    <img class="lightbox-media" id="lb-img" src="" alt="" />
+    <video class="lightbox-media" id="lb-vid" controls style="display:none;"></video>
+    <div class="lightbox-nav">
+      <button class="lightbox-btn" id="lb-prev">‹</button>
+      <span class="lightbox-counter" id="lb-counter"></span>
+      <button class="lightbox-btn" id="lb-next">›</button>
+    </div>
+    <div class="lightbox-thumbs" id="lb-thumbs"></div>
+  </div>
+</div>
+
+<!-- FIX 4: defer projects script so it doesn't block parse -->
+<script src="public/projects.js" defer></script>
+<script src="public/techstack.js" defer></script>
+
+<script>
+
+  
+/* ════════════════════════════════════════════
+   FIX 3: CURSOR — throttled via dirty flag
+   Only recalculates & writes DOM when mouse
+   has actually moved or ring hasn't settled.
+   ════════════════════════════════════════════ */
+const cur  = document.getElementById('cursor');
+const curR = document.getElementById('cursorRing');
+let mx = -100, my = -100, rx = -100, ry = -100;
+let cursorDirty = false;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX;
+  my = e.clientY;
+  cursorDirty = true;
+});
+
+(function animCursor() {
+  if (cursorDirty) {
+    cur.style.left = mx + 'px';
+    cur.style.top  = my + 'px';
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    curR.style.left = rx + 'px';
+    curR.style.top  = ry + 'px';
+    // Stop updating once ring has settled within 0.5px
+    if (Math.abs(mx - rx) < 0.5 && Math.abs(my - ry) < 0.5) {
+      cursorDirty = false;
+    }
+  }
+  requestAnimationFrame(animCursor);
+})();
+
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cur.style.width  = '18px';
+    cur.style.height = '18px';
+    curR.style.opacity = '0';
+  });
+  el.addEventListener('mouseleave', () => {
+    cur.style.width  = '10px';
+    cur.style.height = '10px';
+    curR.style.opacity = '1';
+  });
+});
+
+
+/* ════════════════════════════════════════════
+   REVEAL OBSERVER
+   ════════════════════════════════════════════ */
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+function observeReveals() {
+  document.querySelectorAll('[data-reveal]:not(.visible)').forEach(el => {
+    revealObserver.observe(el);
+  });
+}
+observeReveals();
+
+
+/* ════════════════════════════════════════════
+   FIX 1: LAZY VIDEO OBSERVER
+   Videos use data-src and only load + play
+   when they enter the viewport (+ 200px margin).
+   ════════════════════════════════════════════ */
+const videoObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const v = e.target;
+      if (v.dataset.src) {
+        v.src = v.dataset.src;
+        v.load();
+        v.play().catch(() => {}); // ignore autoplay policy errors silently
+        delete v.dataset.src;    // prevent re-triggering
+      }
+      videoObserver.unobserve(v);
+    }
+  });
+}, { rootMargin: '200px 0px' });
+
+
+/* ════════════════════════════════════════════
+   PROJECT CARD HELPERS
+   ════════════════════════════════════════════ */
+const GH_ICON   = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7C6.73 19.91 6.14 18 6.14 18c-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.115 2.51.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.16.58.67.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>`;
+const LINK_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+
+function isVideo(url) {
+  return /\.(mp4|webm|ogg)$/i.test(url);
+}
+
+function buildGallery(media, idx) {
+  if (!media || !media.length) return '';
+  const showMax = Math.min(media.length, 4);
+  const extra   = media.length - showMax;
+  const cls     = ['', 'n1', 'n2', 'n3', 'n4', 'nmore'][Math.min(media.length, 5)] || 'nmore';
+  let items = '';
+  for (let i = 0; i < showMax; i++) {
+    const url    = media[i];
+    const isLast = i === showMax - 1 && extra > 0;
+
+    /*
+     * FIX 1 (video): use data-src instead of src so the file isn't
+     * fetched until the card scrolls into view.
+     * FIX 1 (image): loading="lazy" is kept for native browser lazy-load.
+     */
+    const el = isVideo(url)
+      ? `<video data-src="${url}" muted loop playsinline class="lazy-video" style="width:100%;height:100%;object-fit:cover;"></video>`
+      : `<img src="${url}" alt="media ${i + 1}" loading="lazy" decoding="async" />`;
+
+    items += `<div class="gallery-item" data-project="${idx}" data-index="${i}">${el}${isLast ? `<div class="gallery-more-overlay" data-project="${idx}" data-index="${i}">+${extra + 1}</div>` : ''}</div>`;
+  }
+  return `<div class="project-gallery"><div class="gallery-grid ${cls}">${items}</div></div>`;
+}
+
+function buildLinks(links) {
+  if (!links || !links.length) return '';
+  return links.map(l => {
+    const isGH = /github/i.test(l.label);
+    return `<a class="project-link" href="${l.url}" target="_blank" rel="noopener">${isGH ? GH_ICON : LINK_ICON}${l.label}</a>`;
+  }).join('');
+}
+
+/* Build a single card's HTML string (pure — no DOM side-effects) */
+function buildCardHTML(p, i) {
+  const delHTML    = p.deliverables?.length
+    ? `<div class="project-deliverables"><div class="project-deliverables-title">Deliverables</div><ul>${p.deliverables.map(d => `<li>${d}</li>`).join('')}</ul></div>`
+    : '';
+  const skillsHTML = p.skills?.length
+    ? `<div class="project-skills">${p.skills.map(s => `<span class="project-skill">${s}</span>`).join('')}</div>`
+    : '';
+  return `<div class="project-card" data-reveal data-delay="${(i % 3) + 1}">
+    ${buildGallery(p.media, i)}
+    <div class="project-body">
+      <div class="project-idx">0${i + 1}</div>
+      <div class="project-title">${p.name}</div>
+      <div class="project-desc">${p.description}</div>
+      ${skillsHTML}${delHTML}
+      <div class="project-links">${buildLinks(p.links)}</div>
+    </div>
+  </div>`;
+}
+
+function attachGalleryListeners() {
+  document.querySelectorAll('.gallery-item, .gallery-more-overlay').forEach(el => {
+    el.addEventListener('click', e => {
+      const t = e.currentTarget;
+      const proj  = parseInt(t.dataset.project  ?? t.closest('[data-project]')?.dataset.project);
+      const index = parseInt(t.dataset.index    ?? t.closest('[data-index]')?.dataset.index);
+      openLightbox(proj, index);
+    });
+  });
+}
+
+/* ════════════════════════════════════════════
+   FIX 2: CHUNKED PROJECT RENDERING
+   Renders CHUNK_SIZE cards per idle callback
+   so the main thread never freezes on large
+   project lists. Falls back to setTimeout when
+   requestIdleCallback is unavailable (Safari<).
+   ════════════════════════════════════════════ */
+const CHUNK_SIZE = 3;
+const ric = window.requestIdleCallback
+  ? window.requestIdleCallback
+  : cb => setTimeout(cb, 0);
+
+function renderProjects() {
+  const container = document.getElementById('projects-container');
+
+  // Guard: PROJECTS must be defined by projects.js (deferred).
+  // If renderProjects() is called before the script loads, wait.
+  if (typeof PROJECTS === 'undefined') {
+    setTimeout(renderProjects, 50);
+    return;
+  }
+
+  const htmlChunks = PROJECTS.map((p, i) => buildCardHTML(p, i));
+  let cursor = 0;
+
+  function renderChunk(deadline) {
+    // Keep going while we have time (or no deadline API)
+    while (cursor < htmlChunks.length) {
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = htmlChunks[cursor];
+      const card = wrapper.firstElementChild;
+      container.appendChild(card);
+
+      // Register any lazy videos inside this card immediately
+      card.querySelectorAll('video.lazy-video').forEach(v => videoObserver.observe(v));
+
+      cursor++;
+
+      // If we have idle deadline info, yield when time runs low
+      if (deadline && deadline.timeRemaining && deadline.timeRemaining() < 4 && cursor < htmlChunks.length) {
+        break;
+      }
+
+      // Without deadline API, process CHUNK_SIZE then yield
+      if (!deadline && cursor % CHUNK_SIZE === 0 && cursor < htmlChunks.length) {
+        break;
+      }
+    }
+
+    if (cursor < htmlChunks.length) {
+      ric(renderChunk); // schedule next chunk
+    } else {
+      // All cards rendered — wire up observers & listeners
+      observeReveals();
+      attachGalleryListeners();
+    }
+  }
+
+  ric(renderChunk);
+}
+
+
+/* ════════════════════════════════════════════
+   LIGHTBOX
+   ════════════════════════════════════════════ */
+let lbP = 0, lbI = 0;
+const lb    = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+const lbVid = document.getElementById('lb-vid');
+const lbC   = document.getElementById('lb-counter');
+const lbTh  = document.getElementById('lb-thumbs');
+
+/* Clean video thumbnail SVG */
+const VIDEO_THUMB = 'data:image/svg+xml,' + encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 40" width="56" height="40">
+     <rect width="56" height="40" fill="#333" rx="4"/>
+     <polygon points="20,12 40,20 20,28" fill="#fff"/>
+   </svg>`
+);
+
+function openLightbox(p, i) {
+  lbP = p; lbI = i;
+  renderLB();
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lb.classList.remove('active');
+  document.body.style.overflow = '';
+  lbVid.pause();
+}
+
+function renderLB() {
+  const media = PROJECTS[lbP].media;
+  const url   = media[lbI];
+  lbC.textContent = `${lbI + 1} / ${media.length}`;
+
+  if (isVideo(url)) {
+    lbImg.style.display = 'none';
+    lbVid.style.display = 'block';
+    lbVid.src = url;
+  } else {
+    lbVid.style.display = 'none';
+    lbVid.pause();
+    lbImg.style.display = 'block';
+    lbImg.src = url;
+  }
+
+  /* Render thumbnails */
+  lbTh.innerHTML = media.map((m, i) => {
+    const src = isVideo(m) ? VIDEO_THUMB : m;
+    return `<img class="lightbox-thumb${i === lbI ? ' active' : ''}" src="${src}" data-idx="${i}" alt="" />`;
+  }).join('');
+
+  /* Re-attach click listeners */
+  lbTh.querySelectorAll('.lightbox-thumb').forEach(t => {
+    t.addEventListener('click', () => {
+      lbI = parseInt(t.dataset.idx);
+      renderLB();
+    });
+  });
+
+  /* Auto-scroll active thumbnail into center */
+  const activeThumb = lbTh.querySelector('.lightbox-thumb.active');
+  if (activeThumb) {
+    activeThumb.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest'
+    });
+  }
+}
+
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.getElementById('lb-prev').addEventListener('click', () => {
+  lbI = (lbI - 1 + PROJECTS[lbP].media.length) % PROJECTS[lbP].media.length;
+  renderLB();
+});
+document.getElementById('lb-next').addEventListener('click', () => {
+  lbI = (lbI + 1) % PROJECTS[lbP].media.length;
+  renderLB();
+});
+lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+
+/* Keyboard support */
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape')      closeLightbox();
+  if (e.key === 'ArrowLeft')   document.getElementById('lb-prev').click();
+  if (e.key === 'ArrowRight')  document.getElementById('lb-next').click();
+}); 
+
+/* ════════════════════════════════════════════
+   TECH STACK RENDER
+   ════════════════════════════════════════════ */
+function renderTechStack() {
+  const grid = document.getElementById('tech-stack-grid');
+  if (!grid || typeof TECH_GROUPS === 'undefined') return;
+  let html = '';
+  TECH_GROUPS.forEach(group => {
+    html += `<div class="tech-separator">
+      <span class="tech-separator-label">${group.label}</span>
+      <span class="tech-separator-line"></span>
+    </div>`;
+    group.items.forEach(item => {
+      html += `<div class="tech-badge">
+        <span class="tb-icon"><img src="${item.icon}" alt="${item.name}" onerror="this.style.display='none'" loading="lazy" decoding="async" /></span>
+        ${item.name}
+      </div>`;
+    });
+  });
+  grid.innerHTML = html;
+}
+
+
+/* ════════════════════════════════════════════
+   BOOT — wait for deferred projects.js
+   projects.js is deferred, so PROJECTS and
+   TECH_GROUPS may not exist yet when this
+   inline script runs. We poll until they do.
+   ════════════════════════════════════════════ */
+function boot() {
+  if (typeof PROJECTS === 'undefined') {
+    setTimeout(boot, 30);
+    return;
+  }
+  renderProjects();
+  renderTechStack();        // this one is safe — it already checks for TECH_GROUPS
+}
+boot();
+</script>
+</body>
+</html>
