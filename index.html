@@ -403,8 +403,8 @@ function buildGallery(media, idx) {
      * FIX 1 (image): loading="lazy" is kept for native browser lazy-load.
      */
     const el = isVideo(url)
-      ? `<video data-src="${url}" muted loop playsinline class="lazy-video" style="width:100%;height:100%;object-fit:cover;"></video>`
-      : `<img src="${url}" alt="media ${i + 1}" loading="lazy" decoding="async" />`;
+      ? `<video data-src="/PORTFOLIO/public/projects${url}" muted loop playsinline class="lazy-video" style="width:100%;height:100%;object-fit:cover;"></video>`
+      : `<img src="/PORTFOLIO/public/projects${url}" alt="media ${i + 1}" loading="lazy" decoding="async" />`;
 
     items += `<div class="gallery-item" data-project="${idx}" data-index="${i}">${el}${isLast ? `<div class="gallery-more-overlay" data-project="${idx}" data-index="${i}">+${extra + 1}</div>` : ''}</div>`;
   }

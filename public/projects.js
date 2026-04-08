@@ -21,12 +21,12 @@ var PROJECTS = [
       // { label: "", url: "" },
     ],
     "media": [
-      "/public/projects/heisched/img (2).jpg",
-      "/public/projects/heisched/img (4).png",
-      "/public/projects/heisched/img (1).jpg",
-      "/public/projects/heisched/img (2).png",
-      "/public/projects/heisched/img (1).png",
-      "/public/projects/heisched/img (3).png",
+      "/heisched/img (2).jpg",
+      "/heisched/img (4).png",
+      "/heisched/img (1).jpg",
+      "/heisched/img (2).png",
+      "/heisched/img (1).png",
+      "/heisched/img (3).png",
     ]
   },
 
@@ -96,14 +96,14 @@ var PROJECTS = [
       }
     ],
     media: [
-      "/public/projects/cropwise/img (4).jpg",
-      "/public/projects/cropwise/img (2).jpg",
-      "/public/projects/cropwise/img (6).jpg",
-      "/public/projects/cropwise/img (1).png",
-      "/public/projects/cropwise/img (5).jpg",
-      "/public/projects/cropwise/img (3).jpg",
-      "/public/projects/cropwise/img (2).png",
-      "/public/projects/cropwise/img (1).jpg",
+      "/cropwise/img (4).jpg",
+      "/cropwise/img (2).jpg",
+      "/cropwise/img (6).jpg",
+      "/cropwise/img (1).png",
+      "/cropwise/img (5).jpg",
+      "/cropwise/img (3).jpg",
+      "/cropwise/img (2).png",
+      "/cropwise/img (1).jpg",
     ]
   },
 
@@ -113,25 +113,25 @@ var PROJECTS = [
     skills: ["GIS", "React Native", "3D Rendering", "Three.js", "P5.JS"],
     deliverables: ["3D interactive campus map", "JSON-based search engine", "Shader mode toggle"],
     media: [
-      "/public/projects/trailmap1/2.mp4",
-      "/public/projects/trailmap1/image_original.png",
-      "/public/projects/trailmap1/image_original (1).png",
-      "/public/projects/trailmap1/1.mp4",
-      "/public/projects/trailmap1/image_original (2).png",
-      "/public/projects/trailmap1/image_original (3).png",
-      "/public/projects/trailmap1/image_original (4).png",
-      "/public/projects/trailmap1/image_original (5).jpg",
-      "/public/projects/trailmap1/image_original (6).png",
-      "/public/projects/trailmap1/image_original (7).png",
-      "/public/projects/trailmap1/image_original (8).png",
-      "/public/projects/trailmap1/image_original (9).jpg",
-      "/public/projects/trailmap1/image_original (10).jpg",
-      "/public/projects/trailmap1/image_original (11).jpg",
-      "/public/projects/trailmap1/image_original (12).jpg",
-      "/public/projects/trailmap1/image_original (13).jpg",
-      "/public/projects/trailmap1/image_original (14).jpg",
-      "/public/projects/trailmap1/image_original (15).jpg",
-      "/public/projects/trailmap1/image_original (16).jpg",
+      "/trailmap1/2.mp4",
+      "/trailmap1/image_original.png",
+      "/trailmap1/image_original (1).png",
+      "/trailmap1/1.mp4",
+      "/trailmap1/image_original (2).png",
+      "/trailmap1/image_original (3).png",
+      "/trailmap1/image_original (4).png",
+      "/trailmap1/image_original (5).jpg",
+      "/trailmap1/image_original (6).png",
+      "/trailmap1/image_original (7).png",
+      "/trailmap1/image_original (8).png",
+      "/trailmap1/image_original (9).jpg",
+      "/trailmap1/image_original (10).jpg",
+      "/trailmap1/image_original (11).jpg",
+      "/trailmap1/image_original (12).jpg",
+      "/trailmap1/image_original (13).jpg",
+      "/trailmap1/image_original (14).jpg",
+      "/trailmap1/image_original (15).jpg",
+      "/trailmap1/image_original (16).jpg",
       
     ],
     links: [
@@ -146,29 +146,29 @@ var PROJECTS = [
     skills: ["MapLibre", "Three.js", "GIS", "Svelte 5", "3D Rendering"],
     deliverables: ["MapLibre-based campus map", "GPS & QR code navigation", "Context-aware search engine", "Dynamic building & room info system", "Baked shadow rendering pipeline"],
     media: [
-      "/public/projects/trailmap2/image.png",
-      "/public/projects/trailmap2/vid.mp4",
-      "/public/projects/trailmap2/vid (1).mp4",
-      "/public/projects/trailmap2/vid (5).mp4",
-      "/public/projects/trailmap2/vid (2).mp4",
-      "/public/projects/trailmap2/vid (3).mp4",
-      "/public/projects/trailmap2/vid (4).mp4",
-      "/public/projects/trailmap2/vid (6).mp4",
-      "/public/projects/trailmap2/vid (7).mp4",
-      "/public/projects/trailmap2/vid (8).mp4",
-      "/public/projects/trailmap2/img.png",
-      "/public/projects/trailmap2/img (1).jpg",
-      "/public/projects/trailmap2/img (2).jpg",
-      "/public/projects/trailmap2/img (3).jpg",
-      "/public/projects/trailmap2/img (4).jpg",
-      "/public/projects/trailmap2/img (5).jpg",
-      "/public/projects/trailmap2/img (6).jpg",
-      "/public/projects/trailmap2/image (1).png",
-      "/public/projects/trailmap2/image (2).png",
-      "/public/projects/trailmap2/image (3).png",
-      "/public/projects/trailmap2/image (4).png",
-      "/public/projects/trailmap2/image (5).png",
-      "/public/projects/trailmap2/image (6).png",
+      "/trailmap2/image.png",
+      "/trailmap2/vid.mp4",
+      "/trailmap2/vid (1).mp4",
+      "/trailmap2/vid (5).mp4",
+      "/trailmap2/vid (2).mp4",
+      "/trailmap2/vid (3).mp4",
+      "/trailmap2/vid (4).mp4",
+      "/trailmap2/vid (6).mp4",
+      "/trailmap2/vid (7).mp4",
+      "/trailmap2/vid (8).mp4",
+      "/trailmap2/img.png",
+      "/trailmap2/img (1).jpg",
+      "/trailmap2/img (2).jpg",
+      "/trailmap2/img (3).jpg",
+      "/trailmap2/img (4).jpg",
+      "/trailmap2/img (5).jpg",
+      "/trailmap2/img (6).jpg",
+      "/trailmap2/image (1).png",
+      "/trailmap2/image (2).png",
+      "/trailmap2/image (3).png",
+      "/trailmap2/image (4).png",
+      "/trailmap2/image (5).png",
+      "/trailmap2/image (6).png",
     ],
     links: [
       { label: "GitHub (PWA)", url: "https://github.com/mihkuno/trailmap" },
@@ -180,13 +180,13 @@ var PROJECTS = [
     skills: ["Project Management", "Solution Architecture", "Event Planning", "Software Architecture", "Software Development"],
     deliverables: ["TrailMap project architecture", "CS workshops & events", "Tech department roadmap"],
     media: [
-      "/public/projects/gdsc/image_original.jpg",
-      "/public/projects/gdsc/image_original (1).jpg",
-      "/public/projects/gdsc/image_original (2).jpg",
-      "/public/projects/gdsc/image_original (3).jpg",
-      "/public/projects/gdsc/image_original (4).jpg",
-      "/public/projects/gdsc/image_original (5).jpg",
-      "/public/projects/gdsc/image_original (6).jpg",
+      "/gdsc/image_original.jpg",
+      "/gdsc/image_original (1).jpg",
+      "/gdsc/image_original (2).jpg",
+      "/gdsc/image_original (3).jpg",
+      "/gdsc/image_original (4).jpg",
+      "/gdsc/image_original (5).jpg",
+      "/gdsc/image_original (6).jpg",
 
     ],
     links: []
@@ -197,11 +197,11 @@ var PROJECTS = [
     skills: ["Computer Vision", "YOLO", "Object Detection", "Machine Learning", "Security Infrastructure"],
     deliverables: ["YOLOv8 uniform detection model", "QR code attendance system", "Email & SMS alert integration", "HPC-trained model pipeline"],
     media: [
-      "/public/projects/obviat/vid.mp4",
-      "/public/projects/obviat/image_original.jpg",
-      "/public/projects/obviat/image_original (1).jpg",
-      "/public/projects/obviat/image_original (2).jpg",
-      "/public/projects/obviat/image_original (3).jpg",
+      "/obviat/vid.mp4",
+      "/obviat/image_original.jpg",
+      "/obviat/image_original (1).jpg",
+      "/obviat/image_original (2).jpg",
+      "/obviat/image_original (3).jpg",
     ],
     links: [
       { label: "GitHub", url: "https://github.com/mihkuno/OBVIAT" }
@@ -213,10 +213,10 @@ var PROJECTS = [
     skills: ["Algorithms", "P5.JS", "TypeScript", "Animation", "Linear Algebra"],
     deliverables: ["Interactive interpolation visualizer", "Polynomial vs. linear comparison demo"],
     media: [
-      "/public/projects/interpoly/vid (1).mp4",
-      "/public/projects/interpoly/vid (2).mp4",
-      "/public/projects/interpoly/image_original.jpg",
-      "/public/projects/interpoly/image_original (1).jpg",
+      "/interpoly/vid (1).mp4",
+      "/interpoly/vid (2).mp4",
+      "/interpoly/image_original.jpg",
+      "/interpoly/image_original (1).jpg",
     ],
     links: [
       { label: "GitHub", url: "https://github.com/mihkuno/INTERPOLY" }
@@ -228,15 +228,15 @@ var PROJECTS = [
     skills: ["Encryption", "Automation", "Ethical Hacking", "Scripting", "Digital Forensics"],
     deliverables: ["Regional Champion title (Region 10)", "National Top 10 Individual rank", "CTF challenge solutions"],
     media: [
-      "/public/projects/h4g/image_original.jpg",
-      "/public/projects/h4g/image_original (1).jpg",
-      "/public/projects/h4g/image_original (2).jpg",
-      "/public/projects/h4g/image_original (3).jpg",
-      "/public/projects/h4g/image_original (4).jpg",
-      "/public/projects/h4g/image_original (7).jpg",
-      "/public/projects/h4g/image_original (6).jpg",
-      "/public/projects/h4g/image_original (5).jpg",
-      "/public/projects/h4g/image_original (8).jpg",
+      "/h4g/image_original.jpg",
+      "/h4g/image_original (1).jpg",
+      "/h4g/image_original (2).jpg",
+      "/h4g/image_original (3).jpg",
+      "/h4g/image_original (4).jpg",
+      "/h4g/image_original (7).jpg",
+      "/h4g/image_original (6).jpg",
+      "/h4g/image_original (5).jpg",
+      "/h4g/image_original (8).jpg",
     ],
     links: [
       { label: "Youtube (GMA News)", url: "https://youtu.be/HIKPh4NEfqM" },
@@ -250,9 +250,9 @@ var PROJECTS = [
     skills: ["Arduino", "Sensor", "Robotics", "Stormwater Management"],
     deliverables: ["Ultrasonic water level sensor", "Voice alert system", "LCD monitoring display"],
     media: [
-      "/public/projects/watlev/vid.mp4",
-      "/public/projects/watlev/image_original.jpg",
-      "/public/projects/watlev/image_original (1).jpg"
+      "/watlev/vid.mp4",
+      "/watlev/image_original.jpg",
+      "/watlev/image_original (1).jpg"
     ],
     links: [
       { label: "GitHub (WATLEV)", url: "https://github.com/mihkuno/WATLEV" },
@@ -265,12 +265,12 @@ var PROJECTS = [
     skills: ["Robotics", "Algorithms", "Scratch", "Arduino"],
     deliverables: ["Line-following robot", "Recovery algorithm", "DevCon Champion title"],
     media: [
-      "/public/projects/devcon/vid.mp4",
-      "/public/projects/devcon/image_original.jpg",
-      "/public/projects/devcon/image_original (1).jpg",
-      "/public/projects/devcon/image_original (2).jpg",
-      "/public/projects/devcon/image_original (3).jpg",
-      "/public/projects/devcon/image_original (4).jpg"
+      "/devcon/vid.mp4",
+      "/devcon/image_original.jpg",
+      "/devcon/image_original (1).jpg",
+      "/devcon/image_original (2).jpg",
+      "/devcon/image_original (3).jpg",
+      "/devcon/image_original (4).jpg"
     ],
     links: []
   },
@@ -280,10 +280,10 @@ var PROJECTS = [
     skills: ["Large Language Models", "Linux", "API", "Computing & Networking", "HPC"],
     deliverables: ["First university LLM deployment", "Hugging Face model integration", "Ollama interaction setup"],
     media: [
-      "/public/projects/hpc/vid (1).mp4",
-      "/public/projects/hpc/vid (2).mp4",
-      "/public/projects/hpc/image_original.jpg",
-      "/public/projects/hpc/image_original (1).jpg",
+      "/hpc/vid (1).mp4",
+      "/hpc/vid (2).mp4",
+      "/hpc/image_original.jpg",
+      "/hpc/image_original (1).jpg",
     ],
     links: []
   },
@@ -293,8 +293,8 @@ var PROJECTS = [
     skills: ["Object Detection", "HTML5", "CSS", "JavaScript", "Computer Vision"],
     deliverables: ["Ml5.js Library", "Google's MediaPipe", "YOLOv3"],
     media: [
-      // "/public/projects/webdet/vid (1).mp4",
-      "/public/projects/webdet/vid (2).mp4",
+      // "/webdet/vid (1).mp4",
+      "/webdet/vid (2).mp4",
       
     ],
     links: [
@@ -311,8 +311,8 @@ var PROJECTS = [
     skills: ["Algorithms", "Machine Learning", "Visualization", "P5.JS", "Pygame"],
     deliverables: ["p5.js clustering animation", "Pygame clustering animation"],
     media: [
-      "/public/projects/kmeans/vid.mp4",
-      "/public/projects/kmeans/image_original.jpg",
+      "/kmeans/vid.mp4",
+      "/kmeans/image_original.jpg",
     ],
     links: [
       { label: "GitHub", url: "https://github.com/mihkuno/KMEANS" }
@@ -324,8 +324,8 @@ var PROJECTS = [
     skills: ["Image Classification", "OCR Software", "Computer Vision", "Webcam", "Medicine"],
     deliverables: ["EfficientDet classification model", "Webcam-based medicine identifier", "OCR integration via Tesseract.js", "Wikipedia info retrieval module"],
     media: [
-      "/public/projects/mecdet/vid.webm",
-      "/public/projects/mecdet/image_original.png",
+      "/mecdet/vid.webm",
+      "/mecdet/image_original.png",
     ],
     links: [
       { label: "GitHub", url: "https://github.com/mihkuno/MECDET" }
@@ -337,14 +337,14 @@ var PROJECTS = [
     skills: ["Arduino", "Sensor", "IoT", "Alert Notifications", "ESP32"],
     deliverables: ["Multi-gas sensor array", "ESP32 data processing unit", "Real-time alert system"],
     media: [
-      "/public/projects/gaslk/vid.mp4",
-      "/public/projects/gaslk/image_original.jpg",
-      "/public/projects/gaslk/image_original (1).jpg",
-      "/public/projects/gaslk/image_original (2).jpg",
-      "/public/projects/gaslk/image_original (3).jpg",
-      "/public/projects/gaslk/image_original (4).jpg",
-      "/public/projects/gaslk/image_original (5).jpg",
-      "/public/projects/gaslk/image_original (6).jpg",
+      "/gaslk/vid.mp4",
+      "/gaslk/image_original.jpg",
+      "/gaslk/image_original (1).jpg",
+      "/gaslk/image_original (2).jpg",
+      "/gaslk/image_original (3).jpg",
+      "/gaslk/image_original (4).jpg",
+      "/gaslk/image_original (5).jpg",
+      "/gaslk/image_original (6).jpg",
     ],
     links: [
       { label: "GitHub", url: "https://github.com/mihkuno/GASLK" }
@@ -358,17 +358,17 @@ var PROJECTS = [
     skills: ["React Native", "MySQL", "ExpressJS", "API", "Software Development"],
     deliverables: ["React Native", "MySQL", "ExpressJS", "API", "Software Development"],
     media: [
-      "/public/projects/grocery/image_original.jpg",
-      "/public/projects/grocery/image_original (1).jpg",
-      "/public/projects/grocery/image_original (2).jpg",
-      "/public/projects/grocery/image_original (3).jpg",
-      "/public/projects/grocery/image_original (4).jpg",
-      "/public/projects/grocery/image_original (5).jpg",
-      "/public/projects/grocery/image_original (6).jpg",
-      "/public/projects/grocery/image_original (7).jpg",
-      "/public/projects/grocery/image_original (8).jpg",
-      "/public/projects/grocery/image_original (9).jpg",
-      "/public/projects/grocery/image_original (10).jpg",
+      "/grocery/image_original.jpg",
+      "/grocery/image_original (1).jpg",
+      "/grocery/image_original (2).jpg",
+      "/grocery/image_original (3).jpg",
+      "/grocery/image_original (4).jpg",
+      "/grocery/image_original (5).jpg",
+      "/grocery/image_original (6).jpg",
+      "/grocery/image_original (7).jpg",
+      "/grocery/image_original (8).jpg",
+      "/grocery/image_original (9).jpg",
+      "/grocery/image_original (10).jpg",
     ],
     links: []
   },
@@ -378,10 +378,10 @@ var PROJECTS = [
     skills: ["Google App Engine", "Serverless Computing", "Gambling", "Object Detection & Tracking", "Cluster Computing"],
     deliverables: ["Google App Engine", "Serverless Computing", "Gambling", "Object Detection & Tracking", "Cluster Computing"],
     media: [
-      "/public/projects/blackjack/vid (1).mp4",
-      "/public/projects/blackjack/vid (2).mp4",
-      "/public/projects/blackjack/image_original.jpg",
-      "/public/projects/blackjack/image_original (1).jpg",
+      "/blackjack/vid (1).mp4",
+      "/blackjack/vid (2).mp4",
+      "/blackjack/image_original.jpg",
+      "/blackjack/image_original (1).jpg",
     ],
     links: [
       { label: "GitHub (BLACKJACK)", url: "https://github.com/mihkuno/BLACKJACK" },
@@ -395,7 +395,7 @@ var PROJECTS = [
     skills: ["Machine Learning", "P5.JS", "Cluster Computing"],
     deliverables: ["Machine Learning", "P5.JS", "Cluster Computing"],
     media: [
-      "/public/projects/skennet/vid.mp4",
+      "/skennet/vid.mp4",
     ],
     links: [
       { label: "GitHub (SKENNET)", url: "https://github.com/mihkuno/SKENNET" },
@@ -407,13 +407,13 @@ var PROJECTS = [
     skills: ["Augmented Reality", "Internet of Things", "Selenium", "ESP32", "Machine Learning"],
     deliverables: ["Augmented Reality", "Internet of Things", "Selenium", "ESP32", "Machine Learning"],
     media: [
-      "/public/projects/covadiue/vid.mp4",
-      "/public/projects/covadiue/image_original.jpg",
-      "/public/projects/covadiue/image_original (5).jpg",
-      "/public/projects/covadiue/image_original (4).jpg",
-      "/public/projects/covadiue/image_original (1).png",
-      "/public/projects/covadiue/image_original (2).png",
-      "/public/projects/covadiue/image_original (3).jpg",
+      "/covadiue/vid.mp4",
+      "/covadiue/image_original.jpg",
+      "/covadiue/image_original (5).jpg",
+      "/covadiue/image_original (4).jpg",
+      "/covadiue/image_original (1).png",
+      "/covadiue/image_original (2).png",
+      "/covadiue/image_original (3).jpg",
     ],
     links: [
       { label: "GitHub (covadiue)", url: "https://github.com/mihkuno/covadiue" },
@@ -425,7 +425,7 @@ var PROJECTS = [
     skills: ["Computer Vision", "Machine Learning", "Object Detection", "Video Processing", "C++"],
     deliverables: ["Computer Vision", "Machine Learning", "Object Detection", "Video Processing", "C++"],
     media: [
-      "/public/projects/yolo/vid.mp4",
+      "/yolo/vid.mp4",
     ],
     links: []
   },
@@ -435,7 +435,7 @@ var PROJECTS = [
     skills: ["Java", "Minecraft", "Server", "Stress Testing", "Bot"],
     deliverables: ["Java", "Minecraft", "Server", "Stress Testing", "Bot"],
     media: [
-      "/public/projects/minebot/image_original.jpg",
+      "/minebot/image_original.jpg",
     ],
     links: []
   },
@@ -445,12 +445,12 @@ var PROJECTS = [
     skills: ["Object Detection", "Image Classification", "Embedded System", "Environment & Green Technology", "Computing & Networking"],
     deliverables: ["Object Detection", "Image Classification", "Embedded System", "Environment & Green Technology", "Computing & Networking"],
     media: [
-      "/public/projects/botlify/image_original.jpg",
-      "/public/projects/botlify/image_original (1).jpg",
-      "/public/projects/botlify/image_original (2).jpg",
-      "/public/projects/botlify/image_original (3).jpg",
-      "/public/projects/botlify/image_original (4).jpg",
-      "/public/projects/botlify/image_original (5).jpg",
+      "/botlify/image_original.jpg",
+      "/botlify/image_original (1).jpg",
+      "/botlify/image_original (2).jpg",
+      "/botlify/image_original (3).jpg",
+      "/botlify/image_original (4).jpg",
+      "/botlify/image_original (5).jpg",
     ],
     links: [
       { label: "GitHub (botlify)", url: "https://github.com/mihkuno/botlify" },
@@ -462,8 +462,8 @@ var PROJECTS = [
     skills: ["Arduino", "Embedded System"],
     deliverables: ["Arduino", "Embedded System"],
     media: [
-      "/public/projects/rocbin/vid (1).mp4",
-      "/public/projects/rocbin/vid (2).mp4",
+      "/rocbin/vid (1).mp4",
+      "/rocbin/vid (2).mp4",
     ],
     links: [
       { label: "GitHub (ROCBIN)", url: "https://github.com/mihkuno/ROCBIN" },
@@ -475,7 +475,7 @@ var PROJECTS = [
     skills: ["Assembly Language", "Algorithms", "Game Development"],
     deliverables: ["Assembly Language", "Algorithms", "Game Development"],
     media: [
-      "/public/projects/huntmips/vid.mp4",
+      "/huntmips/vid.mp4",
     ],
     links: [
       { label: "GitHub (HUNTMIPS)", url: "https://github.com/mihkuno/HUNTMIPS" },
@@ -487,8 +487,8 @@ var PROJECTS = [
     skills: ["Pygame", "Algorithms", "Game Development"],
     deliverables: ["Pygame", "Algorithms", "Game Development"],
     media: [
-      "/public/projects/mazerun/vid (1).mp4",
-      "/public/projects/mazerun/vid (2).mp4",
+      "/mazerun/vid (1).mp4",
+      "/mazerun/vid (2).mp4",
     ],
     links: [
       { label: "GitHub (mazerun)", url: "https://github.com/mihkuno/mazerun" },
@@ -500,7 +500,7 @@ var PROJECTS = [
     skills: ["Algorithms", "P5.JS", "TypeScript", "Visualization"],
     deliverables: ["Algorithms", "P5.JS", "TypeScript", "Visualization"],
     media: [
-      "/public/projects/nqueens/vid.mp4",
+      "/nqueens/vid.mp4",
     ],
     links: []
   },
@@ -510,7 +510,7 @@ var PROJECTS = [
     skills: ["Statistics", "Linear Regression", "Python", "pandas", "Matplotlib"],
     deliverables: ["Statistics", "Linear Regression", "Python", "pandas", "Matplotlib"],
     media: [
-      "/public/projects/gridian/image_original.jpg",
+      "/gridian/image_original.jpg",
     ],
     links: [
       { label: "GitHub (GRIDIAN)", url: "https://github.com/mihkuno/GRIDIAN" },
@@ -522,10 +522,10 @@ var PROJECTS = [
     skills: ["Reverse Engineering", "Python", "Web Scraping"],
     deliverables: ["Reverse Engineering", "Python", "Web Scraping"],
     media: [
-      "/public/projects/lardx/vid.mp4",
-      "/public/projects/lardx/image_original.gif",
-      "/public/projects/lardx/image_original (1).gif",
-      "/public/projects/lardx/image_original (2).gif",
+      "/lardx/vid.mp4",
+      "/lardx/image_original.gif",
+      "/lardx/image_original (1).gif",
+      "/lardx/image_original (2).gif",
     ],
     links: [
       { label: "GitHub (LARDX)", url: "https://github.com/mihkuno/LARDX" },
@@ -537,8 +537,8 @@ var PROJECTS = [
     skills: ["Java", "JavaFX", "P5.JS", "Game Development"],
     deliverables: ["Java", "JavaFX", "P5.JS", "Game Development"],
     media: [
-      "/public/projects/tetris/vid (1).mp4",
-      "/public/projects/tetris/vid (2).mp4",
+      "/tetris/vid (1).mp4",
+      "/tetris/vid (2).mp4",
     ],
     links: [
       { label: "GitHub (tetris)", url: "https://github.com/mihkuno/tetris" },
@@ -551,8 +551,8 @@ var PROJECTS = [
     skills: ["Algorithms", "Visualization", "P5.JS", "TypeScript"],
     deliverables: ["Algorithms", "Visualization", "P5.JS", "TypeScript"],
     media: [
-      "/public/projects/dijkstra/vid (1).mp4",
-      "/public/projects/dijkstra/vid (2).mp4",
+      "/dijkstra/vid (1).mp4",
+      "/dijkstra/vid (2).mp4",
     ],
     links: [
       { label: "GitHub (dijkstra)", url: "https://github.com/mihkuno/dijkstra" },
@@ -564,7 +564,7 @@ var PROJECTS = [
     skills: ["Information Technology"],
     deliverables: ["Information Technology"],
     media: [
-      "/public/projects/topcit/img.png",
+      "/topcit/img.png",
     ],
     links: []
   },
@@ -574,7 +574,7 @@ var PROJECTS = [
     skills: ["Image Classification", "Arduino", "Google", "AI Classifier", "Robotics"],
     deliverables: ["Image Classification", "Arduino", "Google", "AI Classifier", "Robotics"],
     media: [
-      "/public/projects/mathsci/image_original.png",
+      "/mathsci/image_original.png",
     ],
     links: [
       { label: "Facebook (Demo Video)", url: "https://www.facebook.com/watch/?v=529252245037935" },
@@ -586,8 +586,8 @@ var PROJECTS = [
     skills: ["Arduino", "Thermodynamics", "Electronics"],
     deliverables: ["Arduino", "Thermodynamics", "Electronics"],
     media: [
-      "/public/projects/peltier/image_original.jpg",
-      "/public/projects/peltier/image_original (1).jpg",
+      "/peltier/image_original.jpg",
+      "/peltier/image_original (1).jpg",
     ],
     links: []
   },
@@ -597,12 +597,12 @@ var PROJECTS = [
     skills: ["Arduino", "ESP32", "Water Treatment Engineering", "Web Server"],
     deliverables: ["Arduino", "ESP32", "Water Treatment Engineering", "Web Server"],
     media: [
-      "/public/projects/watqual/vid (1).mp4",
-      "/public/projects/watqual/vid (2).mp4",
-      "/public/projects/watqual/image_original.jpg",
-      "/public/projects/watqual/image_original (1).jpg",
-      "/public/projects/watqual/image_original (2).jpg",
-      "/public/projects/watqual/image_original (3).jpg",
+      "/watqual/vid (1).mp4",
+      "/watqual/vid (2).mp4",
+      "/watqual/image_original.jpg",
+      "/watqual/image_original (1).jpg",
+      "/watqual/image_original (2).jpg",
+      "/watqual/image_original (3).jpg",
     ],
     links: [
       { label: "GitHub (LICEON)", url: "https://github.com/mihkuno/LICEON" },
@@ -615,8 +615,8 @@ var PROJECTS = [
     skills: ["React", "Database Management System", "MySQL"],
     deliverables: ["React", "Database Management System", "MySQL"],
     media: [
-      "/public/projects/lorad/image_original.png",
-      "/public/projects/lorad/image_original (1).png",
+      "/lorad/image_original.png",
+      "/lorad/image_original (1).png",
     ],
     links: [
       { label: "GitHub (LORAD)", url: "https://github.com/mihkuno/LORAD" },
@@ -628,7 +628,7 @@ var PROJECTS = [
     skills: ["XAMPP Stack", "Bootstrap", "Chart.js", "DataTables", "Project Management Software"],
     deliverables: ["XAMPP Stack", "Bootstrap", "Chart.js", "DataTables", "Project Management Software"],
     media: [
-      "/public/projects/obsidian/image_original.png",
+      "/obsidian/image_original.png",
     ],
     links: []
   },
