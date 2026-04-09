@@ -1,3 +1,5 @@
+const root = '/PORTFOLIO/public/projects';
+
 var PROJECTS = [
   {
     "name": "HEISCHED — Automated Scheduling System for Philippine Universities",
@@ -633,3 +635,7 @@ var PROJECTS = [
     links: []
   },
 ];
+
+PROJECTS.forEach((p, i) => {
+  p.media = p.media.map(m => root + m);
+});
