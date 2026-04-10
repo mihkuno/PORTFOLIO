@@ -1,4 +1,3 @@
-const root = '/PORTFOLIO/public/projects';
 
 var PROJECTS = [
   {
@@ -33,29 +32,36 @@ var PROJECTS = [
   },
 
 
-// TODO: CHATBOT, CHESS AI, ROBOT ARM, 
-
-//   {
-//     name: str,
-//     description: str,
-//     skills: [str],
-//     deliverables: [str],
-//   }
-
-//   in this format add 
-
-//   Chatbot Leveraging Retrieval-Augmented Generation for Querying Student Handbook of USTP (2023)
-
-//   ⚙️ Ollama - For running LLMs
-// 📊 ChromaDB - For data ingestion
-// 🔮 gemma2:2b-instruct-q5_1 - For generation
-// 🧠 all-mpnet-base-v2 - For embeddings
-// 🔰 mxbai-rerank-base-v1 - For reranking
-// 💬 nli-deberta-v3-base - For coherence
-// 🐍 Python 3.12 - For ml apis
-// 🦕 Node.js 23.10.0 - For JS runtime
-// 🌐 Next.js - For web application
-
+  {
+    name: "Chatbot Leveraging Retrieval-Augmented Generation for Querying Student Handbook of USTP (2023)",
+    description: "A RAG-based chatbot that enables students to query the USTP Student Handbook (2023) using natural language. It combines local LLMs with vector search to deliver accurate, context-aware, and coherent responses through a web interface.",
+    skills: [
+      "Ollama",
+      "ChromaDB",
+      "Gemma 2B",
+      "Sentence Transformers",
+      "Reranking Models",
+      "Python 3.12",
+      "Node.js",
+      "Next.js"
+    ],
+    deliverables: [
+      "RAG-based chatbot system",
+      "Indexed handbook knowledge base",
+      "LLM-powered query response pipeline",
+      "Semantic search and reranking",
+      "Web-based chatbot interface"
+    ],
+    links: [
+      { label: "Github", url: "https://github.com/mihkuno/trail-ai" },
+    ],
+    media: [
+      "/trailai/vid (1).mp4",
+      "/trailai/vid (2).mp4",
+      "/trailai/img (2).jpg",
+      "/trailai/img (1).jpg",
+    ]
+  },
 
   {
     "name": "Cropwise — AI-Powered Smart Farming Assistant",
@@ -98,16 +104,85 @@ var PROJECTS = [
       }
     ],
     media: [
+      "/cropwise/vid (2).mp4",
       "/cropwise/img (4).jpg",
       "/cropwise/img (2).jpg",
       "/cropwise/img (6).jpg",
+      "/cropwise/img (7).jpg",
       "/cropwise/img (1).png",
       "/cropwise/img (5).jpg",
       "/cropwise/img (3).jpg",
       "/cropwise/img (2).png",
       "/cropwise/img (1).jpg",
+      "/cropwise/vid (1).mp4",
     ]
   },
+
+
+  {
+    name: "Procedural Chess AI with 3D Web Interface",
+    description: "A procedurally-driven chess AI written in R by Sir Geovert Labita, integrated with a 3D Three.js gameplay interface and deployed via Google Cloud Run. The system includes an API capable of running multiple instances with state caching.",
+    skills: [
+      "R Programming",
+      "Three.js",
+      "Google Cloud Run",
+      "API Development",
+      "State Management",
+      "Caching",
+      "Backend Systems"
+    ],
+    deliverables: [
+      "Procedural chess AI engine",
+      "3D web-based chess interface",
+      "Scalable API with multi-instance support",
+      "State caching system",
+      "Cloud deployment on Google Cloud Run"
+    ],
+    media: [
+      "/chessai/vid (1).mp4",
+      "/chessai/vid (2).mp4",
+      "/chessai/img (2).png",
+      "/chessai/img (1).png",
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/mihkuno/chessai"
+      }
+    ]
+  },
+
+{
+  name: "MINON: A Compiler Behavior Simulator for Minimized Object Notation (JSON)",
+  description: "A compiler simulator developed for an Automata Theory course that performs lexical and syntax analysis on a minimized JSON format. Built in C++ with visualizations using p5.js, it demonstrates regex-based tokenization, automata transformations, and parsing workflows.",
+  skills: [
+    "C++",
+    "p5.js",
+    "Compiler Design",
+    "Lexical Analysis",
+    "Syntax Analysis",
+    "Finite Automata (NFA/DFA)",
+    "Pushdown Automata",
+    "Context-Free Grammar"
+  ],
+  deliverables: [
+    "Lexical analyzer using regex and automata",
+    "Syntax parser based on CFG",
+    "NFA, DFA, and Mealy machine implementations",
+    "Pushdown automata simulation",
+    "Interactive visualization of compiler behavior"
+  ],
+  media: [
+    "/minon/vid (1).mp4",
+    "/minon/vid (2).mp4",
+  ],
+  links: [
+    {
+      label: "GitHub",
+      url: "https://github.com/mihkuno/minon"
+    }
+  ]
+},
 
   {
     name: "TrailMap — Interactive University Map",
@@ -268,11 +343,13 @@ var PROJECTS = [
     deliverables: ["Line-following robot", "Recovery algorithm", "DevCon Champion title"],
     media: [
       "/devcon/vid.mp4",
-      "/devcon/image_original.jpg",
-      "/devcon/image_original (1).jpg",
-      "/devcon/image_original (2).jpg",
-      "/devcon/image_original (3).jpg",
-      "/devcon/image_original (4).jpg"
+      "/devcon/img (1).jpg",
+      "/devcon/img (2).jpg",
+      "/devcon/img (3).jpg",
+      "/devcon/img (4).jpg",
+      "/devcon/img (5).jpg",
+      "/devcon/img (6).jpg",
+      "/devcon/img (7).jpg",
     ],
     links: []
   },
@@ -437,7 +514,8 @@ var PROJECTS = [
     skills: ["Java", "Minecraft", "Server", "Stress Testing", "Bot"],
     deliverables: ["Java", "Minecraft", "Server", "Stress Testing", "Bot"],
     media: [
-      "/minebot/image_original.jpg",
+      "/minebot/img (1).jpg",
+      "/minebot/img (2).jpg",
     ],
     links: []
   },
@@ -635,6 +713,12 @@ var PROJECTS = [
     links: []
   },
 ];
+
+
+
+
+// const root = '/PORTFOLIO/public/projects';
+const root = '/public/projects';
 
 PROJECTS.forEach((p, i) => {
   p.media = p.media.map(m => root + m);
