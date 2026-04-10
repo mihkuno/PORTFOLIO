@@ -53,6 +53,11 @@ var TECH_GROUPS = [
       { name: 'PyTorch',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
       { name: 'OpenCV',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
 
+      // add pandas and numpy, and matplotlib
+      { name: 'Pandas',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
+      { name: 'NumPy',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
+      { name: 'Matplotlib', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg' },
+
       // ✅ Lobe Icons (REAL logos)
       { name: 'Ollama', icon: 'https://unpkg.com/@lobehub/icons-static-svg@latest/icons/ollama.svg' },
       // { name: 'RunPod', icon: 'https://unpkg.com/@lobehub/icons-static-svg@latest/icons/runpod.svg' },
