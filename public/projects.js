@@ -705,8 +705,8 @@ var PROJECTS = [
 ];
 
 
-// const root = '/PORTFOLIO/public/projects';
-const root = '/public/projects';
+const root = '/PORTFOLIO/public/projects';
+// const root = '/public/projects';
 
 PROJECTS.forEach((p, i) => {
   p.media = p.media.map(m => root + m);
