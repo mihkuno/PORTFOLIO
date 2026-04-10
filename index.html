@@ -462,58 +462,90 @@ function attachGalleryListeners() {
    project lists. Falls back to setTimeout when
    requestIdleCallback is unavailable (Safari<).
    ════════════════════════════════════════════ */
-const CHUNK_SIZE = 3;
-const ric = window.requestIdleCallback
-  ? window.requestIdleCallback
-  : cb => setTimeout(cb, 0);
+/* ════════════════════════════════════════════
+   OPTIMIZED INFINITE SCROLL PROJECT RENDERING
+   ════════════════════════════════════════════ */
+const CHUNK_SIZE = 9;           // 9 projects per load (feels smooth)
+let currentIndex = 0;
+let isLoading = false;
+let sentinelObserver = null;
 
 function renderProjects() {
   const container = document.getElementById('projects-container');
-
-  // Guard: PROJECTS must be defined by projects.js (deferred).
-  // If renderProjects() is called before the script loads, wait.
   if (typeof PROJECTS === 'undefined') {
     setTimeout(renderProjects, 50);
     return;
   }
 
-  const htmlChunks = PROJECTS.map((p, i) => buildCardHTML(p, i));
-  let cursor = 0;
+  if (currentIndex === 0) container.innerHTML = ''; // first load
 
-  function renderChunk(deadline) {
-    // Keep going while we have time (or no deadline API)
-    while (cursor < htmlChunks.length) {
-      const wrapper = document.createElement('div');
-      wrapper.innerHTML = htmlChunks[cursor];
-      const card = wrapper.firstElementChild;
-      container.appendChild(card);
+  const end = Math.min(currentIndex + CHUNK_SIZE, PROJECTS.length);
+  const fragment = document.createDocumentFragment();
 
-      // Register any lazy videos inside this card immediately
-      card.querySelectorAll('video.lazy-video').forEach(v => videoObserver.observe(v));
+  for (let i = currentIndex; i < end; i++) {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = buildCardHTML(PROJECTS[i], i);
+    const card = wrapper.firstElementChild;
+    fragment.appendChild(card);
 
-      cursor++;
-
-      // If we have idle deadline info, yield when time runs low
-      if (deadline && deadline.timeRemaining && deadline.timeRemaining() < 4 && cursor < htmlChunks.length) {
-        break;
-      }
-
-      // Without deadline API, process CHUNK_SIZE then yield
-      if (!deadline && cursor % CHUNK_SIZE === 0 && cursor < htmlChunks.length) {
-        break;
-      }
-    }
-
-    if (cursor < htmlChunks.length) {
-      ric(renderChunk); // schedule next chunk
-    } else {
-      // All cards rendered — wire up observers & listeners
-      observeReveals();
-      attachGalleryListeners();
-    }
+    // Lazy-load videos inside this card
+    card.querySelectorAll('video.lazy-video').forEach(v => videoObserver.observe(v));
   }
 
-  ric(renderChunk);
+  container.appendChild(fragment);
+
+  currentIndex = end;
+
+  observeReveals();
+  attachGalleryListeners();
+
+  // Create / move sentinel for infinite scroll
+  createOrUpdateSentinel(container);
+}
+
+function createOrUpdateSentinel(container) {
+  let sentinel = document.getElementById('projects-sentinel');
+
+  if (!sentinel) {
+    sentinel = document.createElement('div');
+    sentinel.id = 'projects-sentinel';
+    sentinel.style.height = '40px';
+    sentinel.style.marginTop = '40px';
+    container.parentElement.appendChild(sentinel);
+  }
+
+  // If no more projects left, remove sentinel
+  if (currentIndex >= PROJECTS.length) {
+    sentinel.remove();
+    if (sentinelObserver) sentinelObserver.disconnect();
+    return;
+  }
+
+  // Set up IntersectionObserver (only once)
+  if (!sentinelObserver) {
+    sentinelObserver = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !isLoading) {
+        loadNextChunk();
+      }
+    }, { rootMargin: '300px 0px' }); // start loading a bit early
+  }
+
+  sentinelObserver.observe(sentinel);
+}
+
+function loadNextChunk() {
+  if (isLoading || currentIndex >= PROJECTS.length) return;
+  isLoading = true;
+
+  // Optional: small loading indicator
+  const sentinel = document.getElementById('projects-sentinel');
+  if (sentinel) sentinel.innerHTML = `<div style="text-align:center;padding:20px;font-family:var(--ff-mono);font-size:13px;color:var(--text-muted);">Loading more projects…</div>`;
+
+  // Small delay so it feels natural
+  setTimeout(() => {
+    renderProjects();   // this will load the next chunk and re-create sentinel
+    isLoading = false;
+  }, 180);
 }
 
 

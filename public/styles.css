@@ -1,3 +1,8 @@
+#projects-sentinel {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
 :root {
   --bg:        #0A0B0D;
   --bg2:       #0F1115;
