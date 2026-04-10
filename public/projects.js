@@ -55,6 +55,7 @@ var PROJECTS = [
     ],
     "media": [
       "/cropwise/000008.webp",
+      "/cropwise/000010.webp",
       "/cropwise/000007.webp",
       "/cropwise/000006.webp",
       "/cropwise/000001.webp",
@@ -704,8 +705,8 @@ var PROJECTS = [
 ];
 
 
-const root = '/PORTFOLIO/public/projects';
-// const root = '/public/projects';
+// const root = '/PORTFOLIO/public/projects';
+const root = '/public/projects';
 
 PROJECTS.forEach((p, i) => {
   p.media = p.media.map(m => root + m);
