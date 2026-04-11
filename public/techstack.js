@@ -22,10 +22,11 @@ var TECH_GROUPS = [
       { name: 'React',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
       { name: 'Next.js',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
       { name: 'Tailwind',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-      { name: 'Three.js',   icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg' },
+      { name: 'Three.js',   icon: 'https://cdn.simpleicons.org/three.js/black/white' },
       { name: 'p5.js',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/p5js/p5js-original.svg' },
       { name: 'Flutter',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
       { name: 'Vite',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg' },
+      { name: 'Maplibre',   icon: 'https://cdn.simpleicons.org/maplibre/black/white' },
 
       { name: 'ml5.js',     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
     ]
