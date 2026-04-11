@@ -17,63 +17,78 @@
   --ff-serif: 'DM Serif Display', Georgia, serif;
   --ff-sans: 'Inter', sans-serif;
   --ff-mono: 'DM Mono', monospace;
+  
+  /* Viewer specific colors */
+  --pdf-bg: #ffffff;
+  --pdf-accent: #e8e8e4;
 }
 
-/* ── PRINT ── */
-@media print {
-  @page { margin: 0; size: A4 portrait; }
-  html, body { width: 794px !important; height: 1123px !important; overflow: hidden !important; background: white !important; }
-  .no-print { display: none !important; }
-  #outer { padding: 0 !important; background: white !important; min-height: 0 !important; }
-  #page-wrap { transform: none !important; }
-  #spacer { display: none !important; }
-  .page { box-shadow: none !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+/* ── SCREEN & VIEWER LAYOUT ── */
+html, body { 
+  background: var(--pdf-bg); 
+  font-family: var(--ff-sans); 
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ── SCREEN ── */
-html, body { background: #e8e8e4; font-family: var(--ff-sans); color: var(--ink); }
-body { overflow-x: hidden; overflow-y: auto; min-height: 100vh; }
-
-#outer {
-  min-height: 100vh;
-  padding: 24px 0 48px;
+/* Layout Wrapper aligns button to the page bounds */
+.layout-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end; /* Aligns print button to the top right */
   gap: 12px;
-  position: relative;
 }
 
-#util-bar {
+.print-btn {
+  font-family: var(--ff-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  
+  cursor: pointer;
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  width: 794px; /* overridden by JS */
-  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+  
+  /* transition: background 0.15s, color 0.15s, transform 0.1s; */
 }
-.util-btn {
-  font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.1em;
-  text-transform: uppercase; padding: 6px 14px;
-  border: 1px solid var(--ink); background: transparent;
-  cursor: pointer; color: var(--ink); transition: background .15s, color .15s;
-}
-.util-btn:hover { background: var(--ink); color: #fff; }
 
-/*
-  #page-wrap is transform-only — it never participates in layout sizing.
-  #spacer (a flex sibling) is given height = PAGE_H * scale by JS
-  so the outer div scrolls correctly.
-  transform-origin: top left + translateX(tx) centers the scaled page.
-*/
-#page-wrap {
-  transform-origin: top left;
-  flex-shrink: 0;
-  width: 794px;
-  height: 0;
-  overflow: visible;
-  align-self: flex-start; /* prevents flexbox from stretching it */
+/* match hover behavior */
+.print-btn:hover {
+  border: none;
+  background: var(--ink);
+  color: #fff;
 }
-#spacer { flex-shrink: 0; width: 1px; align-self: flex-start; }
+
+/* keep icon consistent */
+.print-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Scale Container solves the CSS transform bounds issue */
+.scale-container {
+  position: relative;
+  /* Width and height are set dynamically by JS to match scaled page */
+}
+
+#page-wrap {
+  width: 794px;
+  height: 1123px;
+  transform-origin: top left; /* Changed to top left for wrapper logic */
+  box-shadow: 0 4px 32px rgba(0,0,0,0.08); /* Lighter shadow for white bg */
+  background: var(--paper);
+}
+
 
 /* ══ THE PAGE — hard-locked 794×1123, never reflows ══ */
 .page {
@@ -84,7 +99,6 @@ body { overflow-x: hidden; overflow-y: auto; min-height: 100vh; }
   grid-template-columns: 200px 594px;
   grid-template-rows: 1123px;
   position: relative;
-  box-shadow: 0 4px 40px rgba(0,0,0,0.14);
   overflow: hidden;
 }
 
@@ -158,335 +172,375 @@ body { overflow-x: hidden; overflow-y: auto; min-height: 100vh; }
 .page-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule); padding-top: 10px; margin-top: auto; }
 .footer-note { font-family: var(--ff-mono); font-size: 7px; color: var(--ink-faint); letter-spacing: 0.1em; white-space: nowrap; }
 .footer-initials { font-family: var(--ff-serif); font-size: 12px; color: var(--ink-faint); font-style: italic; }
+
+/* ── PRINT STYLES ── */
+@media print {
+  @page { margin: 0; size: A4 portrait; }
+  html, body { 
+    width: 794px !important; 
+    height: 1123px !important; 
+    overflow: hidden !important; 
+    background: white !important; 
+    display: block !important;
+  }
+  .no-print { display: none !important; }
+  .layout-wrapper, .scale-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+  }
+  #page-wrap { 
+    transform: none !important; 
+    box-shadow: none !important; 
+  }
+  .page { 
+    -webkit-print-color-adjust: exact; 
+    print-color-adjust: exact; 
+  }
+}
 </style>
 </head>
 <body>
-<div id="outer">
-  <div id="util-bar" class="no-print">
-    <button class="util-btn" onclick="window.print()">&#8595; Print / Save PDF</button>
-  </div>
-  <!-- spacer: in-flow element whose height JS sets to PAGE_H * scale, driving scroll height -->
-  <!-- <div id="spacer"></div> -->
-  <!-- page-wrap: never reflows; only transformed -->
-  <div id="page-wrap">
-    <div class="page">
 
-      <!-- LEFT COLUMN -->
-      <div class="col-left">
-        <div class="avatar-wrap">
-          <img src="/PORTFOLIO/public/000002.webp" alt="Joeniño D. Cainday"
-               onerror="this.src='/public/000002.webp'" />
+  <div class="layout-wrapper">
+    <button class="print-btn no-print" onclick="window.print()" title="Print / Save as PDF">
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+      </svg> -->
+      Print / Save PDF
+    </button>
+
+    <div class="scale-container">
+      <div id="page-wrap">
+        
+        <div class="page">
+          <!-- LEFT COLUMN -->
+      <div class="page">
+        <!-- LEFT COLUMN -->
+        <div class="col-left">
+          <div class="avatar-wrap">
+            <img src="/PORTFOLIO/public/000002.webp" alt="Joeniño D. Cainday"
+                 onerror="this.src='/public/000002.webp'" />
+          </div>
+          <div class="name-block">
+            <div class="name-first">Joeniño D.</div>
+            <div class="name-last">Cainday</div>
+            <div class="name-role">Computer Scientist</div>
+          </div>
+          <div class="l-section">
+            <div class="l-label">Contact</div>
+            <div class="contact-item">
+              <span class="contact-key">Email</span>
+              <span class="contact-val"><a href="mailto:caindayjoeninyo@gmail.com">caindayjoeninyo@gmail.com</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-key">GitHub</span>
+              <span class="contact-val"><a href="https://github.com/mihkuno" target="_blank">github.com/mihkuno</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-key">LinkedIn</span>
+              <span class="contact-val"><a href="https://www.linkedin.com/in/mihkuno" target="_blank">linkedin.com/in/mihkuno</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-key">Location</span>
+              <span class="contact-val">Cagayan de Oro, Philippines</span>
+            </div>
+          </div>
+          <div class="l-section">
+            <div class="l-label">Core Expertise</div>
+            <div>
+              <span class="skill-tag-l">Full-Stack Development</span>
+              <span class="skill-tag-l">Internet of Things</span>
+              <span class="skill-tag-l">Cybersecurity</span>
+              <span class="skill-tag-l">Operations Research</span>
+              <span class="skill-tag-l">Geographic Information Systems</span>
+              <span class="skill-tag-l">Artificial Intelligence</span>
+            </div>
+          </div>
+          <div class="l-section">
+            <div class="l-label">Languages</div>
+            <div>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">Python</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">TypeScript</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">JavaScript</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg">C++</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg">C#</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">Java</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg">Dart</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg">Assembly</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg">R</span>
+            </div>
+          </div>
+          <div class="l-section">
+            <div class="l-label">Frontend</div>
+            <div>
+              <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/latex/black/white">LaTeX</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">HTML</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">CSS</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg">Svelte</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">React</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg">Next.js</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg">Tailwind</span>
+              <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/three.js/black/white">Three.js</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/p5js/p5js-original.svg">p5.js</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg">Flutter</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg">Vite</span>
+              <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/maplibre/black/white">MapLibre</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">ml5.js</span>
+            </div>
+          </div>
+          <div class="l-section">
+            <div class="l-label">Backend &amp; Database</div>
+            <div>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">Node.js</span>
+              <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/express/black/white">Express</span>
+              <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/deno/black/white">Deno</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">MongoDB</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">MySQL</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg">Redis</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg">Firebase</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">systemd</span>
+            </div>
+          </div>
+          <div class="l-section">
+            <div class="l-label">AI / Machine Learning</div>
+            <div>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg">OR-Tools</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg">PyTorch</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg">OpenCV</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg">Pandas</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg">NumPy</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg">Matplotlib</span>
+              <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/ollama/black/white">Ollama</span>
+            </div>
+          </div>
+          <div class="l-section">
+            <div class="l-label">Infra &amp; Tools</div>
+            <div>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">Docker</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg">Kubernetes</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">Git</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">Linux</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg">GCloud</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg">Selenium</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg">Blender</span>
+              <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/vercel/black/white">Vercel</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg">Bash</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg">PowerShell</span>
+            </div>
+          </div>
+          <div class="l-section">
+            <div class="l-label">Hardware</div>
+            <div>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg">Raspberry Pi</span>
+              <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg">Arduino</span>
+            </div>
+          </div>
         </div>
-        <div class="name-block">
-          <div class="name-first">Joeniño D.</div>
-          <div class="name-last">Cainday</div>
-          <div class="name-role">Computer Scientist</div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="col-right">
+          <div class="intro">
+            <div class="intro-eyebrow">Computer Science · USTP · Cagayan de Oro</div>
+            <div class="intro-headline">Building at the edge<br>of <em>code &amp; science.</em></div>
+            <div class="intro-bio">
+              Specializing in <strong>computational modelling, simulation,
+              and optimization</strong>. Experienced across the full spectrum — from embedded prototypes
+              to AI-powered systems and award-winning hackathon projects. Open to research, collaboration,
+              and engineering opportunities.
+            </div>
+            <div class="stats-row">
+              <div class="stat"><div class="stat-n">100+</div><div class="stat-l">Projects</div></div>
+              <div class="stat"><div class="stat-n">50+</div><div class="stat-l">Tech Stacks</div></div>
+              <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Yrs Coding</div></div>
+              <div class="stat"><div class="stat-n">L2</div><div class="stat-l">TopCIT</div></div>
+            </div>
+          </div>
+
+          <div class="r-section">
+            <div class="r-label">Education</div>
+            <div class="edu-item-r">
+              <div class="edu-school-r">University of Science and Technology of Southern Philippines</div>
+              <div class="edu-deg-r">BS Computer Science — Computational Modelling &amp; Simulation</div>
+              <div class="edu-yr-r">2022 – 2027* · 4th Year</div>
+              <div class="edu-honor-r">Dean's Lister</div>
+            </div>
+            <div class="edu-item-r">
+              <div class="edu-school-r">Iligan Computer Institute</div>
+              <div class="edu-deg-r">TVL ICT — Web Development · Grade 12</div>
+              <div class="edu-yr-r">2021 – 2022</div>
+              <div class="edu-honor-r">High Honor · DOST Top 20</div>
+            </div>
+            <div class="edu-item-r">
+              <div class="edu-school-r">Capitol University</div>
+              <div class="edu-deg-r">STEM — Programming · Grade 11</div>
+              <div class="edu-yr-r">2020 – 2021</div>
+              <div class="edu-honor-r">Highest Honor · Student of the Year</div>
+            </div>
+          </div>
+
+          <div class="r-section">
+            <div class="r-label">Experience</div>
+            <div class="exp-entry">
+              <div class="exp-head">
+                <div class="exp-title">Software Developer Intern</div>
+                <div class="exp-co">Autofy.ai</div>
+                <div class="exp-dates">Mar – Apr 2024</div>
+              </div>
+              <ul class="exp-bullets">
+                <li>Contributed to production-level AI automation tooling for 2 months.</li>
+              </ul>
+            </div>
+            <div class="exp-entry">
+              <div class="exp-head">
+                <div class="exp-title">GIS Developer &amp; CS Lead</div>
+                <div class="exp-co">GDSC USTP CDO</div>
+                <div class="exp-dates">2022 – 2024</div>
+              </div>
+              <ul class="exp-bullets">
+                <li>Architected TrailMap — a 3D campus navigation system used institution-wide.</li>
+                <li>Designed CS workshops, events, and tech department roadmap for two cycles.</li>
+              </ul>
+            </div>
+            <div class="exp-entry">
+              <div class="exp-head">
+                <div class="exp-title">Asst. Core Lead — CS³</div>
+                <div class="exp-co">USTP Computer Science Student Society</div>
+                <div class="exp-dates">Aug 2023 – Jul 2025</div>
+              </div>
+              <ul class="exp-bullets">
+                <li>Co-led academic org operations, competitions, and departmental activities.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="r-section">
+            <div class="r-label">Selected Projects</div>
+            <div class="projects-grid">
+              <div class="proj-card">
+                <div class="proj-title">Cropwise — AI Smart Farming App</div>
+                <div class="proj-desc">AI-powered smart farming app for multicropping, real-time IoT soil/weather monitoring, and personalized farm management.</div>
+                <div class="proj-stack">
+                  <span class="proj-pill">Svelte 5</span><span class="proj-pill">Ollama</span><span class="proj-pill">PyTorch</span><span class="proj-pill">Arduino</span><span class="proj-pill">Figma</span>
+                </div>
+              </div>
+              <div class="proj-card">
+                <div class="proj-title">HEISCHED — Automated Scheduling System</div>
+                <div class="proj-desc">Constraint optimizer for Philippine HEI course timetabling. Ongoing thesis.</div>
+                <div class="proj-stack">
+                  <span class="proj-pill">Svelte 5</span><span class="proj-pill">Python</span><span class="proj-pill">OR-Tools</span><span class="proj-pill">CP-SAT</span>
+                </div>
+              </div>
+              <div class="proj-card">
+                <div class="proj-title">TrailMap v2 — 3D Campus Map</div>
+                <div class="proj-desc">MapLibre + Three.js campus navigation with GPS, QR codes, baked shadows &amp; search.</div>
+                <div class="proj-stack">
+                  <span class="proj-pill">MapLibre</span><span class="proj-pill">Three.js</span><span class="proj-pill">Svelte 5</span><span class="proj-pill">GIS</span>
+                </div>
+              </div>
+              <div class="proj-card">
+                <div class="proj-title">RAG Handbook Chatbot</div>
+                <div class="proj-desc">Local LLM + ChromaDB + reranking for natural language queries on the USTP Student Handbook.</div>
+                <div class="proj-stack">
+                  <span class="proj-pill">Ollama</span><span class="proj-pill">ChromaDB</span><span class="proj-pill">Gemma 2B</span><span class="proj-pill">Next.js</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="r-section">
+            <div class="r-label">Awards &amp; Recognition</div>
+            <div class="award-item">
+              <div class="award-dot"></div>
+              <div class="award-body">
+                <div class="award-title">Cropwise — 3rd Place, Digi Agri Hacki</div>
+                <div class="award-sub">AI-powered smart farming mobile app. 5th place (Phase 2) &amp; 3rd place (Final) — Department of Agriculture hackathon, Quezon City.</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <div class="award-dot"></div>
+              <div class="award-body">
+                <div class="award-title">Hack4Gov CTF — Regional Champion (Region 10) &amp; National Top 10</div>
+                <div class="award-sub">Team Quaxode leader. Ranked 17th nationally, 10th individual category, in DICT Hack4Gov Capture the Flag.</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <div class="award-dot"></div>
+              <div class="award-body">
+                <div class="award-title">Level 2 TopCIT — 2023</div>
+                <div class="award-sub">South Korean practical information technology competency assessment. USTP CDO Computer Science Dept.</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <div class="award-dot"></div>
+              <div class="award-body">
+                <div class="award-title">DOST iMake.WeMake — Top 20 Finalist</div>
+                <div class="award-sub">Augemented Reality Glasses for contactless face mask &amp; temperature monitoring (ESP32CAM).</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <div class="award-dot"></div>
+              <div class="award-body">
+                <div class="award-title">DevCon Line Follower Robot — Champion</div>
+                <div class="award-sub">Fastest with recovery algorithm; first-place performance across all runs.</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <div class="award-dot"></div>
+              <div class="award-body">
+                <div class="award-title">MathSci 2022 — 2nd Runner-Up</div>
+                <div class="award-sub">Trash classification AI with Arduino servo mechanism — Iligan Computer Institute.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-footer">
+            <div class="footer-note">caindayjoeninyo@gmail.com</div>
+            <div class="footer-initials">JC</div>
+          </div>
         </div>
-        <div class="l-section">
-          <div class="l-label">Contact</div>
-          <div class="contact-item">
-            <span class="contact-key">Email</span>
-            <span class="contact-val"><a href="mailto:caindayjoeninyo@gmail.com">caindayjoeninyo@gmail.com</a></span>
-          </div>
-          <div class="contact-item">
-            <span class="contact-key">GitHub</span>
-            <span class="contact-val"><a href="https://github.com/mihkuno" target="_blank">github.com/mihkuno</a></span>
-          </div>
-          <div class="contact-item">
-            <span class="contact-key">LinkedIn</span>
-            <span class="contact-val"><a href="https://www.linkedin.com/in/mihkuno" target="_blank">linkedin.com/in/mihkuno</a></span>
-          </div>
-          <div class="contact-item">
-            <span class="contact-key">Location</span>
-            <span class="contact-val">Cagayan de Oro, Philippines</span>
-          </div>
-        </div>
-        <div class="l-section">
-          <div class="l-label">Core Expertise</div>
-          <div>
-            <span class="skill-tag-l">Full-Stack Development</span>
-            <span class="skill-tag-l">Internet of Things</span>
-            <span class="skill-tag-l">Cybersecurity</span>
-            <span class="skill-tag-l">Operations Research</span>
-            <span class="skill-tag-l">Geographic Information Systems</span>
-            <span class="skill-tag-l">Artificial Intelligence</span>
-          </div>
-        </div>
-        <div class="l-section">
-          <div class="l-label">Languages</div>
-          <div>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">Python</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">TypeScript</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">JavaScript</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg">C++</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg">C#</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">Java</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg">Dart</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg">Assembly</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg">R</span>
-          </div>
-        </div>
-        <div class="l-section">
-          <div class="l-label">Frontend</div>
-          <div>
-            <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/latex/black/white">LaTeX</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">HTML</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">CSS</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg">Svelte</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">React</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg">Next.js</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg">Tailwind</span>
-            <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/three.js/black/white">Three.js</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/p5js/p5js-original.svg">p5.js</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg">Flutter</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg">Vite</span>
-            <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/maplibre/black/white">MapLibre</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">ml5.js</span>
-          </div>
-        </div>
-        <div class="l-section">
-          <div class="l-label">Backend &amp; Database</div>
-          <div>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">Node.js</span>
-            <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/express/black/white">Express</span>
-            <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/deno/black/white">Deno</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">MongoDB</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">MySQL</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg">Redis</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg">Firebase</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">systemd</span>
-          </div>
-        </div>
-        <div class="l-section">
-          <div class="l-label">AI / Machine Learning</div>
-          <div>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg">OR-Tools</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg">PyTorch</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg">OpenCV</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg">Pandas</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg">NumPy</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg">Matplotlib</span>
-            <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/ollama/black/white">Ollama</span>
-          </div>
-        </div>
-        <div class="l-section">
-          <div class="l-label">Infra &amp; Tools</div>
-          <div>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">Docker</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg">Kubernetes</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">Git</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">Linux</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg">GCloud</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg">Selenium</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg">Blender</span>
-            <span class="skill-tag-l"><img src="https://cdn.simpleicons.org/vercel/black/white">Vercel</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg">Bash</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg">PowerShell</span>
-          </div>
-        </div>
-        <div class="l-section">
-          <div class="l-label">Hardware</div>
-          <div>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg">Raspberry Pi</span>
-            <span class="skill-tag-l"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg">Arduino</span>
-          </div>
-        </div>
+
       </div>
-
-      <!-- RIGHT COLUMN -->
-      <div class="col-right">
-        <div class="intro">
-          <div class="intro-eyebrow">Computer Science · USTP · Cagayan de Oro</div>
-          <div class="intro-headline">Building at the edge<br>of <em>code &amp; science.</em></div>
-          <div class="intro-bio">
-            Specializing in <strong>computational modelling, simulation,
-            and optimization</strong>. Experienced across the full spectrum — from embedded prototypes
-            to AI-powered systems and award-winning hackathon projects. Open to research, collaboration,
-            and engineering opportunities.
-          </div>
-          <div class="stats-row">
-            <div class="stat"><div class="stat-n">100+</div><div class="stat-l">Projects</div></div>
-            <div class="stat"><div class="stat-n">50+</div><div class="stat-l">Tech Stacks</div></div>
-            <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Yrs Coding</div></div>
-            <div class="stat"><div class="stat-n">L2</div><div class="stat-l">TopCIT</div></div>
-          </div>
-        </div>
-
-        <div class="r-section">
-          <div class="r-label">Education</div>
-          <div class="edu-item-r">
-            <div class="edu-school-r">University of Science and Technology of Southern Philippines</div>
-            <div class="edu-deg-r">BS Computer Science — Computational Modelling &amp; Simulation</div>
-            <div class="edu-yr-r">2022 – 2027* · 4th Year</div>
-            <div class="edu-honor-r">Dean's Lister</div>
-          </div>
-          <div class="edu-item-r">
-            <div class="edu-school-r">Iligan Computer Institute</div>
-            <div class="edu-deg-r">TVL ICT — Web Development · Grade 12</div>
-            <div class="edu-yr-r">2021 – 2022</div>
-            <div class="edu-honor-r">High Honor · DOST Top 20</div>
-          </div>
-          <div class="edu-item-r">
-            <div class="edu-school-r">Capitol University</div>
-            <div class="edu-deg-r">STEM — Programming · Grade 11</div>
-            <div class="edu-yr-r">2020 – 2021</div>
-            <div class="edu-honor-r">Highest Honor · Student of the Year</div>
-          </div>
-        </div>
-
-        <div class="r-section">
-          <div class="r-label">Experience</div>
-          <div class="exp-entry">
-            <div class="exp-head">
-              <div class="exp-title">Software Developer Intern</div>
-              <div class="exp-co">Autofy.ai</div>
-              <div class="exp-dates">Mar – Apr 2024</div>
-            </div>
-            <ul class="exp-bullets">
-              <li>Contributed to production-level AI automation tooling for 2 months.</li>
-            </ul>
-          </div>
-          <div class="exp-entry">
-            <div class="exp-head">
-              <div class="exp-title">GIS Developer &amp; CS Lead</div>
-              <div class="exp-co">GDSC USTP CDO</div>
-              <div class="exp-dates">2022 – 2024</div>
-            </div>
-            <ul class="exp-bullets">
-              <li>Architected TrailMap — a 3D campus navigation system used institution-wide.</li>
-              <li>Designed CS workshops, events, and tech department roadmap for two cycles.</li>
-            </ul>
-          </div>
-          <div class="exp-entry">
-            <div class="exp-head">
-              <div class="exp-title">Asst. Core Lead — CS³</div>
-              <div class="exp-co">USTP Computer Science Student Society</div>
-              <div class="exp-dates">Aug 2023 – Jul 2025</div>
-            </div>
-            <ul class="exp-bullets">
-              <li>Co-led academic org operations, competitions, and departmental activities.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="r-section">
-          <div class="r-label">Selected Projects</div>
-          <div class="projects-grid">
-            <div class="proj-card">
-              <div class="proj-title">Cropwise — AI Smart Farming App</div>
-              <div class="proj-desc">AI-powered smart farming app for multicropping, real-time IoT soil/weather monitoring, and personalized farm management.</div>
-              <div class="proj-stack">
-                <span class="proj-pill">Svelte 5</span><span class="proj-pill">Ollama</span><span class="proj-pill">PyTorch</span><span class="proj-pill">Arduino</span><span class="proj-pill">Figma</span>
-              </div>
-            </div>
-            <div class="proj-card">
-              <div class="proj-title">HEISCHED — Automated Scheduling System</div>
-              <div class="proj-desc">Constraint optimizer for Philippine HEI course timetabling. Ongoing thesis.</div>
-              <div class="proj-stack">
-                <span class="proj-pill">Svelte 5</span><span class="proj-pill">Python</span><span class="proj-pill">OR-Tools</span><span class="proj-pill">CP-SAT</span>
-              </div>
-            </div>
-            <div class="proj-card">
-              <div class="proj-title">TrailMap v2 — 3D Campus Map</div>
-              <div class="proj-desc">MapLibre + Three.js campus navigation with GPS, QR codes, baked shadows &amp; search.</div>
-              <div class="proj-stack">
-                <span class="proj-pill">MapLibre</span><span class="proj-pill">Three.js</span><span class="proj-pill">Svelte 5</span><span class="proj-pill">GIS</span>
-              </div>
-            </div>
-            <div class="proj-card">
-              <div class="proj-title">RAG Handbook Chatbot</div>
-              <div class="proj-desc">Local LLM + ChromaDB + reranking for natural language queries on the USTP Student Handbook.</div>
-              <div class="proj-stack">
-                <span class="proj-pill">Ollama</span><span class="proj-pill">ChromaDB</span><span class="proj-pill">Gemma 2B</span><span class="proj-pill">Next.js</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="r-section">
-          <div class="r-label">Awards &amp; Recognition</div>
-          <div class="award-item">
-            <div class="award-dot"></div>
-            <div class="award-body">
-              <div class="award-title">Cropwise — 3rd Place, Digi Agri Hacki</div>
-              <div class="award-sub">AI-powered smart farming mobile app. 5th place (Phase 2) &amp; 3rd place (Final) — Department of Agriculture hackathon, Quezon City.</div>
-            </div>
-          </div>
-          <div class="award-item">
-            <div class="award-dot"></div>
-            <div class="award-body">
-              <div class="award-title">Hack4Gov CTF — Regional Champion (Region 10) &amp; National Top 10</div>
-              <div class="award-sub">Team Quaxode leader. Ranked 17th nationally, 10th individual category, in DICT Hack4Gov Capture the Flag.</div>
-            </div>
-          </div>
-          <div class="award-item">
-            <div class="award-dot"></div>
-            <div class="award-body">
-              <div class="award-title">Level 2 TopCIT — 2023</div>
-              <div class="award-sub">South Korean practical information technology competency assessment. USTP CDO Computer Science Dept.</div>
-            </div>
-          </div>
-          <div class="award-item">
-            <div class="award-dot"></div>
-            <div class="award-body">
-              <div class="award-title">DOST iMake.WeMake — Top 20 Finalist</div>
-              <div class="award-sub">Augemented Reality Glasses for contactless face mask &amp; temperature monitoring (ESP32CAM).</div>
-            </div>
-          </div>
-          <div class="award-item">
-            <div class="award-dot"></div>
-            <div class="award-body">
-              <div class="award-title">DevCon Line Follower Robot — Champion</div>
-              <div class="award-sub">Fastest with recovery algorithm; first-place performance across all runs.</div>
-            </div>
-          </div>
-          <div class="award-item">
-            <div class="award-dot"></div>
-            <div class="award-body">
-              <div class="award-title">MathSci 2022 — 2nd Runner-Up</div>
-              <div class="award-sub">Trash classification AI with Arduino servo mechanism — Iligan Computer Institute.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="page-footer">
-          <div class="footer-note">caindayjoeninyo@gmail.com</div>
-          <div class="footer-initials">JC</div>
-        </div>
-      </div>
-
     </div>
   </div>
-</div>
 
 <script>
-(function() {
-  var PAGE_W = 794, PAGE_H = 1123, PAD = 48;
-  var wrap    = document.getElementById('page-wrap');
-  var spacer  = document.getElementById('spacer');
-  var utilBar = document.getElementById('util-bar');
+  function scalePageToFit() {
+    const scaleContainer = document.querySelector('.scale-container');
+    const pageWrap = document.getElementById('page-wrap');
+    
+    // Resume Base Dimensions
+    const PAGE_WIDTH = 794;
+    const PAGE_HEIGHT = 1123;
+    
+    // Get available space minus padding for button and margins
+    const paddingX = 40; 
+    const paddingY = 80; 
+    const availableWidth = window.innerWidth - paddingX;
+    const availableHeight = window.innerHeight - paddingY;
+    
+    // Calculate the scale needed to fit both width and height exactly inside the window
+    const scale = Math.min(
+      availableWidth / PAGE_WIDTH, 
+      availableHeight / PAGE_HEIGHT,
+      1 // Max scale of 1 (100%) so it doesn't get artificially enlarged on huge screens
+    );
+    
+    // Apply scale to the page
+    pageWrap.style.transform = `scale(${scale})`;
+    
+    // Update the scale container bounds to explicitly match the scaled page.
+    // This solves the CSS transform bounds issue, allowing Flexbox to center it perfectly.
+    scaleContainer.style.width = `${PAGE_WIDTH * scale}px`;
+    scaleContainer.style.height = `${PAGE_HEIGHT * scale}px`;
 
-  function rescale() {
-    var vw    = window.innerWidth;
-    var scale = Math.min(1, (vw - PAD) / PAGE_W);
-    var tx    = (vw - PAGE_W * scale) / 2;
-
-    // Purely visual transform — zero reflow
-    wrap.style.transform = 'translateX(' + tx + 'px) scale(' + scale + ')';
-
-    // Spacer height = visual height of the scaled page
-    spacer.style.height = (PAGE_H * scale) + 'px';
-
-    // Util bar matches visual page width, centered
-    utilBar.style.width      = (PAGE_W * scale) + 'px';
-    utilBar.style.marginLeft = tx + 'px';
-    utilBar.style.marginRight = '0';
-    utilBar.style.alignSelf  = 'flex-start';
   }
 
-  rescale();
-  window.addEventListener('resize', rescale);
-})();
+  // Run on load and whenever the window is resized
+  window.addEventListener('DOMContentLoaded', scalePageToFit);
+  window.addEventListener('resize', scalePageToFit);
 </script>
 </body>
 </html>
