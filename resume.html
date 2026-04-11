@@ -17,16 +17,12 @@
   --ff-serif: 'DM Serif Display', Georgia, serif;
   --ff-sans: 'Inter', sans-serif;
   --ff-mono: 'DM Mono', monospace;
-  
-  /* Viewer specific colors */
   --pdf-bg: #ffffff;
-  --pdf-accent: #e8e8e4;
 }
 
-/* ── SCREEN & VIEWER LAYOUT ── */
-html, body { 
-  background: var(--pdf-bg); 
-  font-family: var(--ff-sans); 
+html, body {
+  background: var(--pdf-bg);
+  font-family: var(--ff-sans);
   height: 100dvh;
   overflow: hidden;
   display: flex;
@@ -34,11 +30,10 @@ html, body {
   justify-content: center;
 }
 
-/* Layout Wrapper aligns button to the page bounds */
 .layout-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Aligns print button to the top right */
+  align-items: flex-end;
   gap: 12px;
 }
 
@@ -47,177 +42,164 @@ html, body {
   font-size: 8px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-
   padding: 6px 12px;
   background: transparent;
   border: 1px solid var(--ink);
   color: var(--ink);
-  
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 6px;
-  
-  /* transition: background 0.15s, color 0.15s, transform 0.1s; */
 }
-
-/* match hover behavior */
 .print-btn:hover {
   border: none;
   background: var(--ink);
   color: #fff;
 }
+.print-btn svg { width: 14px; height: 14px; fill: currentColor; }
 
-/* keep icon consistent */
-.print-btn svg {
-  width: 14px;
-  height: 14px;
-  fill: currentColor;
-}
-
-/* Scale Container solves the CSS transform bounds issue */
-.scale-container {
-  position: relative;
-  /* Width and height are set dynamically by JS to match scaled page */
-}
+.scale-container { position: relative; }
 
 #page-wrap {
   width: 794px;
   height: 1123px;
-  transform-origin: top left; /* Changed to top left for wrapper logic */
-  box-shadow: 0 4px 32px rgba(0,0,0,0.08); /* Lighter shadow for white bg */
+  transform-origin: top left;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.08);
   background: var(--paper);
 }
 
-
-/* ══ THE PAGE — hard-locked 794×1123, never reflows ══ */
+/* ══ THE PAGE ══ */
 .page {
   width: 794px !important; min-width: 794px !important; max-width: 794px !important;
   height: 1123px !important; min-height: 1123px !important; max-height: 1123px !important;
   background: var(--paper);
   display: grid;
-  grid-template-columns: 200px 594px;
-  grid-template-rows: 1123px;
+  grid-template-columns: 230px 564px;
   position: relative;
   overflow: hidden;
 }
 
 /* ══ LEFT COLUMN ══ */
 .col-left {
-  width: 230px !important; min-width: 230px !important; max-width: 230px !important;
-  height: 1123px !important; overflow: hidden !important;
-  background: var(--ink); color: #e8e8e2;
-  padding: 28px 18px 28px 22px;
-  display: flex; flex-direction: column; gap: 16px;
+  width: 230px !important;
+  min-width: 230px !important;
+  max-width: 230px !important;
+  height: 1123px !important;
+  overflow: hidden !important;
+  background: var(--ink);
+  color: #e8e8e2;
+  padding: 24px 16px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-.avatar-wrap { width: 100px; height: 100px; border-radius: 5px; overflow: hidden; border: 2px solid rgba(255,255,255,0.15); flex-shrink: 0; }
+
+.avatar-wrap { width: 90px; height: 90px; border-radius: 5px; overflow: hidden; border: 2px solid rgba(255,255,255,0.15); flex-shrink: 0; }
 .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.name-block { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 14px; flex-shrink: 0; }
-.name-first { font-family: var(--ff-serif); font-size: 21px; line-height: 1.05; white-space: nowrap; }
-.name-last { font-family: var(--ff-serif); font-style: italic; font-size: 21px; line-height: 1.05; color: rgba(255,255,255,0.5); white-space: nowrap; }
-.name-role { font-family: var(--ff-mono); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 5px; white-space: nowrap; }
-.l-section { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
-.l-label { font-family: var(--ff-mono); font-size: 7px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.3); border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 4px; margin-bottom: 2px; white-space: nowrap; }
-.contact-item { display: flex; flex-direction: column; gap: 2px; }
-.contact-key { font-family: var(--ff-mono); font-size: 7px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
-.contact-val { font-size: 8.5px; color: rgba(255,255,255,0.75); word-break: break-all; line-height: 1.35; }
+
+.name-block { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 12px; flex-shrink: 0; }
+.name-first { font-family: var(--ff-serif); font-size: 20px; line-height: 1.05; white-space: nowrap; }
+.name-last { font-family: var(--ff-serif); font-style: italic; font-size: 20px; line-height: 1.05; color: rgba(255,255,255,0.5); white-space: nowrap; }
+.name-role { font-family: var(--ff-mono); font-size: 7.5px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 4px; white-space: nowrap; }
+
+.l-section { display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; }
+.l-label { font-family: var(--ff-mono); font-size: 6.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.3); border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 3px; margin-bottom: 1px; white-space: nowrap; }
+.contact-item { display: flex; flex-direction: column; gap: 1px; }
+.contact-key { font-family: var(--ff-mono); font-size: 6.5px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
+.contact-val { font-size: 8px; color: rgba(255,255,255,0.75); word-break: break-all; line-height: 1.35; }
 .contact-val a { color: inherit; text-decoration: none; }
+
 .skill-tag-l { display: inline-flex; align-items: center; gap: 3px; font-family: var(--ff-mono); font-size: 6.5px; padding: 2px 4px; border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.6); margin: 1px 1px 1px 0; line-height: 1.3; white-space: nowrap; }
 .skill-tag-l img { width: 7px; height: 7px; flex-shrink: 0; }
 
 /* ══ RIGHT COLUMN ══ */
 .col-right {
-  width: 569px !important; min-width: 569px !important; max-width: 569px !important;
-  height: 1123px !important; overflow: hidden !important;
-  padding: 28px 40px; margin-left: 10px; display: flex; flex-direction: column; gap: 0;
+  width: 564px !important;
+  min-width: 564px !important;
+  max-width: 564px !important;
+  height: 1123px !important;
+  overflow: hidden !important;
+  padding: 26px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
-.intro { padding-bottom: 16px; border-bottom: 1px solid var(--rule); margin-bottom: 16px; flex-shrink: 0; }
-.intro-eyebrow { font-family: var(--ff-mono); font-size: 7.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 5px; white-space: nowrap; }
-.intro-headline { font-family: var(--ff-serif); font-size: 26px; line-height: 1.05; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 9px; }
+
+.intro { padding-bottom: 14px; border-bottom: 1px solid var(--rule); margin-bottom: 14px; flex-shrink: 0; }
+.intro-eyebrow { font-family: var(--ff-mono); font-size: 7px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 5px; white-space: nowrap; }
+.intro-headline { font-family: var(--ff-serif); font-size: 24px; line-height: 1.05; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 8px; }
 .intro-headline em { font-style: italic; color: var(--ink-soft); }
-.intro-bio { font-size: 9px; color: var(--ink-mid); line-height: 1.6; width: 400px; }
+.intro-bio { font-size: 8.5px; color: var(--ink-mid); line-height: 1.6; width: 420px; }
 .stats-row { display: flex; gap: 16px; margin-top: 8px; }
 .stat { display: flex; flex-direction: column; gap: 1px; }
-.stat-n { font-family: var(--ff-serif); font-size: 19px; line-height: 1; color: var(--ink); white-space: nowrap; }
-.stat-l { font-family: var(--ff-mono); font-size: 7px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; }
-.r-section { margin-bottom: 22px; flex-shrink: 0; }
-.r-label { font-family: var(--ff-mono); font-size: 7.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); border-bottom: 1px solid var(--teal-light); padding-bottom: 4px; margin-bottom: 10px; white-space: nowrap; }
-.edu-item-r { margin-bottom: 11px; }
+.stat-n { font-family: var(--ff-serif); font-size: 18px; line-height: 1; color: var(--ink); white-space: nowrap; }
+.stat-l { font-family: var(--ff-mono); font-size: 6.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; }
+
+.r-section { margin-bottom: 18px; flex-shrink: 0; }
+.r-label { font-family: var(--ff-mono); font-size: 7px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); border-bottom: 1px solid var(--teal-light); padding-bottom: 4px; margin-bottom: 9px; white-space: nowrap; }
+
+.edu-item-r { margin-bottom: 10px; }
 .edu-item-r:last-child { margin-bottom: 0; }
-.edu-school-r { font-size: 10px; font-weight: 500; color: var(--ink); line-height: 1.3; }
-.edu-deg-r { font-size: 8.7px; color: var(--ink-mid); line-height: 1.4; }
-.edu-yr-r { font-family: var(--ff-mono); font-size: 7px; color: var(--ink-faint); letter-spacing: 0.1em; margin-top: 1px; white-space: nowrap; }
-.edu-honor-r { font-size: 8px; color: var(--teal); margin-top: 3px; }
-.exp-entry { margin-bottom: 10px; }
+.edu-school-r { font-size: 9.5px; font-weight: 500; color: var(--ink); line-height: 1.3; }
+.edu-deg-r { font-size: 8.5px; color: var(--ink-mid); line-height: 1.4; }
+.edu-yr-r { font-family: var(--ff-mono); font-size: 6.5px; color: var(--ink-faint); letter-spacing: 0.1em; margin-top: 1px; white-space: nowrap; }
+.edu-honor-r { font-size: 7.5px; color: var(--teal); margin-top: 2px; }
+
+.exp-entry { margin-bottom: 9px; }
 .exp-entry:last-child { margin-bottom: 0; }
 .exp-head { display: flex; align-items: baseline; gap: 7px; margin-bottom: 2px; }
-.exp-title { font-size: 10px; font-weight: 500; color: var(--ink); white-space: nowrap; }
-.exp-co { font-family: var(--ff-mono); font-size: 8px; color: var(--teal); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.exp-dates { margin-left: auto; font-family: var(--ff-mono); font-size: 7px; color: var(--ink-faint); white-space: nowrap; }
+.exp-title { font-size: 9.5px; font-weight: 500; color: var(--ink); white-space: nowrap; }
+.exp-co { font-family: var(--ff-mono); font-size: 7.5px; color: var(--teal); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.exp-dates { margin-left: auto; font-family: var(--ff-mono); font-size: 6.5px; color: var(--ink-faint); white-space: nowrap; }
 .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 1px; }
-.exp-bullets li { font-size: 8.7px; color: var(--ink-mid); line-height: 1.5; padding-left: 9px; position: relative; }
+.exp-bullets li { font-size: 8.5px; color: var(--ink-mid); line-height: 1.5; padding-left: 9px; position: relative; }
 .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--ink-faint); }
-.projects-grid { display: grid; grid-template-columns: 242px 242px; gap: 7px; }
-.proj-card { border: 1px solid var(--rule); padding: 8px 10px; display: flex; flex-direction: column; gap: 3px; width: 242px; overflow: hidden; }
-.proj-title { font-size: 9px; font-weight: 500; line-height: 1.25; color: var(--ink); }
-.proj-desc { font-size: 8px; color: var(--ink-soft); line-height: 1.45; }
+
+.projects-grid { display: grid; grid-template-columns: 238px 238px; gap: 6px; }
+.proj-card { border: 1px solid var(--rule); padding: 7px 9px; display: flex; flex-direction: column; gap: 3px; overflow: hidden; }
+.proj-title { font-size: 8.5px; font-weight: 500; line-height: 1.25; color: var(--ink); }
+.proj-desc { font-size: 7.5px; color: var(--ink-soft); line-height: 1.45; }
 .proj-stack { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 3px; }
-.proj-pill { font-family: var(--ff-mono); font-size: 6.5px; padding: 1.5px 4px; background: var(--teal-light); color: var(--teal); letter-spacing: 0.04em; white-space: nowrap; }
-.award-item { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 7px; }
+.proj-pill { font-family: var(--ff-mono); font-size: 6px; padding: 1.5px 4px; background: var(--teal-light); color: var(--teal); letter-spacing: 0.04em; white-space: nowrap; }
+
+.award-item { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px; }
 .award-item:last-child { margin-bottom: 0; }
-.award-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--teal); margin-top: 4px; flex-shrink: 0; }
-.award-body { display: flex; flex-direction: column; gap: 1px; }
-.award-title { font-size: 9px; font-weight: 500; color: var(--ink); }
-.award-sub { font-size: 8px; color: var(--ink-soft); line-height: 1.4; }
-.page-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule); padding-top: 10px; margin-top: auto; }
+.award-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--teal); margin-top: 3px; flex-shrink: 0; }
+.award-body { display: flex; flex-direction: column; gap: 4px; }
+.award-title { font-size: 8.5px; font-weight: 500; color: var(--ink); }
+.award-sub { font-size: 7.5px; color: var(--ink-soft); line-height: 1.4; }
+
+.page-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule); padding-top: 8px; margin-top: auto; }
 .footer-note { font-family: var(--ff-mono); font-size: 7px; color: var(--ink-faint); letter-spacing: 0.1em; white-space: nowrap; }
 .footer-initials { font-family: var(--ff-serif); font-size: 12px; color: var(--ink-faint); font-style: italic; }
 
-/* ── PRINT STYLES ── */
 @media print {
   @page { margin: 0; size: A4 portrait; }
-  html, body { 
-    width: 794px !important; 
-    height: 1123px !important; 
-    overflow: hidden !important; 
-    background: white !important; 
+  html, body {
+    width: 794px !important;
+    height: 1123px !important;
+    overflow: hidden !important;
+    background: white !important;
     display: block !important;
   }
   .no-print { display: none !important; }
-  .layout-wrapper, .scale-container {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: auto !important;
-    height: auto !important;
-    display: block !important;
-  }
-  #page-wrap { 
-    transform: none !important; 
-    box-shadow: none !important; 
-  }
-  .page { 
-    -webkit-print-color-adjust: exact; 
-    print-color-adjust: exact; 
-  }
+  .layout-wrapper, .scale-container { margin: 0 !important; padding: 0 !important; width: auto !important; height: auto !important; display: block !important; }
+  #page-wrap { transform: none !important; box-shadow: none !important; }
+  .page { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 </style>
 </head>
 <body>
 
-  <div class="layout-wrapper">
-    <button class="print-btn no-print" onclick="window.print()" title="Print / Save as PDF">
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
-      </svg> -->
-      Print / Save PDF
-    </button>
+<div class="layout-wrapper">
+  <button class="print-btn no-print" onclick="window.print()" title="Print / Save as PDF">
+    Print / Save PDF
+  </button>
 
-    <div class="scale-container">
-      <div id="page-wrap">
-        
-        <div class="page">
-          <!-- LEFT COLUMN -->
+  <div class="scale-container">
+    <div id="page-wrap">
       <div class="page">
+
         <!-- LEFT COLUMN -->
         <div class="col-left">
           <div class="avatar-wrap">
@@ -344,12 +326,9 @@ html, body {
         <div class="col-right">
           <div class="intro">
             <div class="intro-eyebrow">Computer Science · USTP · Cagayan de Oro</div>
-            <div class="intro-headline">Building at the edge<br>of <em>code &amp; science.</em></div>
+            <div class="intro-headline">Computational modelling <br>for <em>optimization, &amp; intelligent systems.</em></div>
             <div class="intro-bio">
-              Specializing in <strong>computational modelling, simulation,
-              and optimization</strong>. Experienced across the full spectrum — from embedded prototypes
-              to AI-powered systems and award-winning hackathon projects. Open to research, collaboration,
-              and engineering opportunities.
+              Embedded prototypes, AI-powered systems and award-winning hackathon projects. Open to research, collaboration, and engineering opportunities.
             </div>
             <div class="stats-row">
               <div class="stat"><div class="stat-n">100+</div><div class="stat-l">Projects</div></div>
@@ -385,28 +364,28 @@ html, body {
             <div class="r-label">Experience</div>
             <div class="exp-entry">
               <div class="exp-head">
-                <div class="exp-title">Software Developer Intern</div>
+                <div class="exp-title">Frontend Developer Intern</div>
                 <div class="exp-co">Autofy.ai</div>
                 <div class="exp-dates">Mar – Apr 2024</div>
               </div>
               <ul class="exp-bullets">
-                <li>Contributed to production-level AI automation tooling for 2 months.</li>
+                <li>Agile development of animated interfaces integrated into the core AI automation platform.</li>
               </ul>
             </div>
             <div class="exp-entry">
               <div class="exp-head">
-                <div class="exp-title">GIS Developer &amp; CS Lead</div>
+                <div class="exp-title">Geographic Information System Developer &amp; Computer Science Lead</div>
                 <div class="exp-co">GDSC USTP CDO</div>
                 <div class="exp-dates">2022 – 2024</div>
               </div>
               <ul class="exp-bullets">
-                <li>Architected TrailMap — a 3D campus navigation system used institution-wide.</li>
-                <li>Designed CS workshops, events, and tech department roadmap for two cycles.</li>
+                <li>Agile development of a campus navigation system deployed institution-wide.</li>
+                <li>Assisted workshops, events, and tech department roadmap.</li>
               </ul>
             </div>
             <div class="exp-entry">
               <div class="exp-head">
-                <div class="exp-title">Asst. Core Lead — CS³</div>
+                <div class="exp-title">Asst. Research Core Lead — CS³</div>
                 <div class="exp-co">USTP Computer Science Student Society</div>
                 <div class="exp-dates">Aug 2023 – Jul 2025</div>
               </div>
@@ -421,28 +400,28 @@ html, body {
             <div class="projects-grid">
               <div class="proj-card">
                 <div class="proj-title">Cropwise — AI Smart Farming App</div>
-                <div class="proj-desc">AI-powered smart farming app for multicropping, real-time IoT soil/weather monitoring, and personalized farm management.</div>
+                <div class="proj-desc">Multicropping AI network with real-time IoT soil &amp; weather monitoring and farm management tools.</div>
                 <div class="proj-stack">
                   <span class="proj-pill">Svelte 5</span><span class="proj-pill">Ollama</span><span class="proj-pill">PyTorch</span><span class="proj-pill">Arduino</span><span class="proj-pill">Figma</span>
                 </div>
               </div>
               <div class="proj-card">
-                <div class="proj-title">HEISCHED — Automated Scheduling System</div>
-                <div class="proj-desc">Constraint optimizer for Philippine HEI course timetabling. Ongoing thesis.</div>
+                <div class="proj-title">HEISCHED — Scheduling System</div>
+                <div class="proj-desc">Weighted constraint optimizer for Philippine HEI course timetabling. Ongoing thesis.</div>
                 <div class="proj-stack">
                   <span class="proj-pill">Svelte 5</span><span class="proj-pill">Python</span><span class="proj-pill">OR-Tools</span><span class="proj-pill">CP-SAT</span>
                 </div>
               </div>
               <div class="proj-card">
                 <div class="proj-title">TrailMap v2 — 3D Campus Map</div>
-                <div class="proj-desc">MapLibre + Three.js campus navigation with GPS, QR codes, baked shadows &amp; search.</div>
+                <div class="proj-desc">Campus navigation with GPS, QR codes, baked shadows, and context-aware search.</div>
                 <div class="proj-stack">
                   <span class="proj-pill">MapLibre</span><span class="proj-pill">Three.js</span><span class="proj-pill">Svelte 5</span><span class="proj-pill">GIS</span>
                 </div>
               </div>
               <div class="proj-card">
-                <div class="proj-title">RAG Handbook Chatbot</div>
-                <div class="proj-desc">Local LLM + ChromaDB + reranking for natural language queries on the USTP Student Handbook.</div>
+                <div class="proj-title">Trail AI — RAG Handbook Chatbot</div>
+                <div class="proj-desc">Cloud distributed Local LLM with vector database reranking for NL queries on student handbook.</div>
                 <div class="proj-stack">
                   <span class="proj-pill">Ollama</span><span class="proj-pill">ChromaDB</span><span class="proj-pill">Gemma 2B</span><span class="proj-pill">Next.js</span>
                 </div>
@@ -455,46 +434,71 @@ html, body {
             <div class="award-item">
               <div class="award-dot"></div>
               <div class="award-body">
-                <div class="award-title">Cropwise — 3rd Place, Digi Agri Hacki</div>
-                <div class="award-sub">AI-powered smart farming mobile app. 5th place (Phase 2) &amp; 3rd place (Final) — Department of Agriculture hackathon, Quezon City.</div>
+                <div class="award-title">Arctech — 3rd Place, Digi Agri Hacki</div>
+                <div class="award-sub">5th (Phase 2) &amp; 3rd (Final) — Dept. of Agriculture national hackathon, Quezon City.</div>
               </div>
             </div>
             <div class="award-item">
               <div class="award-dot"></div>
               <div class="award-body">
                 <div class="award-title">Hack4Gov CTF — Regional Champion (Region 10) &amp; National Top 10</div>
-                <div class="award-sub">Team Quaxode leader. Ranked 17th nationally, 10th individual category, in DICT Hack4Gov Capture the Flag.</div>
+                <div class="award-sub">Team Quaxode leader. Ranked 17th nationally, 10th individual — DICT Hack4Gov CTF.</div>
               </div>
             </div>
             <div class="award-item">
               <div class="award-dot"></div>
               <div class="award-body">
                 <div class="award-title">Level 2 TopCIT — 2023</div>
-                <div class="award-sub">South Korean practical information technology competency assessment. USTP CDO Computer Science Dept.</div>
+                <div class="award-sub">South Korean information technology competency assessment — USTP CDO Computer Science Dept.</div>
               </div>
             </div>
             <div class="award-item">
               <div class="award-dot"></div>
               <div class="award-body">
                 <div class="award-title">DOST iMake.WeMake — Top 20 Finalist</div>
-                <div class="award-sub">Augemented Reality Glasses for contactless face mask &amp; temperature monitoring (ESP32CAM).</div>
+                <div class="award-sub">Augmented realtiy glasses for contactless face mask &amp; temperature monitoring via ESP32CAM.</div>
               </div>
             </div>
             <div class="award-item">
               <div class="award-dot"></div>
               <div class="award-body">
                 <div class="award-title">DevCon Line Follower Robot — Champion</div>
-                <div class="award-sub">Fastest with recovery algorithm; first-place performance across all runs.</div>
+                <div class="award-sub">Fastest with recovery algorithm; first place across all runs.</div>
               </div>
             </div>
             <div class="award-item">
               <div class="award-dot"></div>
               <div class="award-body">
                 <div class="award-title">MathSci 2022 — 2nd Runner-Up</div>
-                <div class="award-sub">Trash classification AI with Arduino servo mechanism — Iligan Computer Institute.</div>
+                <div class="award-sub">Trash classification AI with Arduino servo — Iligan Computer Institute.</div>
               </div>
             </div>
           </div>
+
+          <div class="r-section">
+  <div class="r-label">References</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+
+    <div>
+      <div class="exp-title">Maricel Esclamado</div>
+      <div class="exp-co">OJT Coordinator</div>
+      <ul class="exp-bullets" style="margin-top:2px">
+        <li style="font-size:8px;color:var(--ink-soft)">CS Dept, USTP CDO</li>
+        <li style="font-size:8px"><a href="mailto:maricel.esclamado@ustp.edu.ph" style="color:var(--teal)">maricel.esclamado@ustp.edu.ph</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="exp-title">Junar Landicho</div>
+      <div class="exp-co">Dean, CITC</div>
+      <ul class="exp-bullets" style="margin-top:2px">
+        <li style="font-size:8px;color:var(--ink-soft)">CS Dept, USTP CDO</li>
+        <li style="font-size:8px"><a href="mailto:junarlandicho@ustp.edu.ph" style="color:var(--teal)">junarlandicho@ustp.edu.ph</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
 
           <div class="page-footer">
             <div class="footer-note">caindayjoeninyo@gmail.com</div>
@@ -505,40 +509,27 @@ html, body {
       </div>
     </div>
   </div>
+</div>
 
 <script>
   function scalePageToFit() {
     const scaleContainer = document.querySelector('.scale-container');
     const pageWrap = document.getElementById('page-wrap');
-    
-    // Resume Base Dimensions
     const PAGE_WIDTH = 794;
     const PAGE_HEIGHT = 1123;
-    
-    // Get available space minus padding for button and margins
-    const paddingX = 40; 
-    const paddingY = 80; 
+    const paddingX = 40;
+    const paddingY = 80;
     const availableWidth = window.innerWidth - paddingX;
     const availableHeight = window.innerHeight - paddingY;
-    
-    // Calculate the scale needed to fit both width and height exactly inside the window
     const scale = Math.min(
-      availableWidth / PAGE_WIDTH, 
+      availableWidth / PAGE_WIDTH,
       availableHeight / PAGE_HEIGHT,
-      1 // Max scale of 1 (100%) so it doesn't get artificially enlarged on huge screens
+      1
     );
-    
-    // Apply scale to the page
     pageWrap.style.transform = `scale(${scale})`;
-    
-    // Update the scale container bounds to explicitly match the scaled page.
-    // This solves the CSS transform bounds issue, allowing Flexbox to center it perfectly.
     scaleContainer.style.width = `${PAGE_WIDTH * scale}px`;
     scaleContainer.style.height = `${PAGE_HEIGHT * scale}px`;
-
   }
-
-  // Run on load and whenever the window is resized
   window.addEventListener('DOMContentLoaded', scalePageToFit);
   window.addEventListener('resize', scalePageToFit);
 </script>
