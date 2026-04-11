@@ -166,7 +166,7 @@ body { overflow-x: hidden; overflow-y: auto; min-height: 100vh; }
     <button class="util-btn" onclick="window.print()">&#8595; Print / Save PDF</button>
   </div>
   <!-- spacer: in-flow element whose height JS sets to PAGE_H * scale, driving scroll height -->
-  <div id="spacer"></div>
+  <!-- <div id="spacer"></div> -->
   <!-- page-wrap: never reflows; only transformed -->
   <div id="page-wrap">
     <div class="page">
@@ -461,7 +461,7 @@ body { overflow-x: hidden; overflow-y: auto; min-height: 100vh; }
 
 <script>
 (function() {
-  var PAGE_W = 794, PAGE_H = 0, PAD = 48;
+  var PAGE_W = 794, PAGE_H = 1123, PAD = 48;
   var wrap    = document.getElementById('page-wrap');
   var spacer  = document.getElementById('spacer');
   var utilBar = document.getElementById('util-bar');
