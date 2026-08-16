@@ -44,7 +44,7 @@ body {
   width: 10px; height: 10px;
   background: var(--teal);
   border-radius: 50%;
-  position: fixed; z-index: 9999;
+  position: fixed; z-index: 100000;
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: transform 0.08s, width 0.2s, height 0.2s, background 0.2s;
@@ -54,7 +54,7 @@ body {
   width: 36px; height: 36px;
   border: 1.5px solid rgba(0,229,195,0.4);
   border-radius: 50%;
-  position: fixed; z-index: 9998;
+  position: fixed; z-index: 99999;
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: transform 0.2s ease, width 0.3s, height 0.3s, opacity 0.3s;
@@ -846,7 +846,7 @@ footer {
 }
  
 .lightbox-overlay {
-  position: fixed; inset: 0; z-index: 1000;
+  position: fixed; inset: 0; z-index: 10000;
   background: rgba(0,0,0,0.95);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; pointer-events: none;
@@ -1139,6 +1139,39 @@ footer {
   gap: 6px;
 }
 
+/* ── Certifications ── */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.cert-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.cert-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--teal);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+.cert-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cert-card:hover img {
+  transform: scale(1.03);
+}
+
 /* ── Awards Gallery ── */
 .awards-gallery {
   display: grid;
@@ -1187,7 +1220,7 @@ footer {
 .lightbox {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 10000;
   background: rgba(0,0,0,0.92);
   backdrop-filter: blur(8px);
   display: none;

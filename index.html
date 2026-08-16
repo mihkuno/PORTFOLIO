@@ -306,43 +306,29 @@
       <h2 class="section-title">Verified <em>certifications</em></h2>
     </div>
 
-    <div class="certs-grid"
-      style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px;"
-      data-reveal>
-      <div class="cert-card"
-        style="background:var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
-        <img src="public/certs/langgraph.jpg"
-          style="width:100%; height:200px; object-fit: cover; border-bottom: 1px solid var(--border);"
-          alt="LangGraph Foundation" loading="lazy" decoding="async">
+    <div class="certs-grid" data-reveal>
+      <div class="cert-card" onclick="openAwardLightbox(this)">
+        <img src="public/certs/langgraph.jpg" alt="LangGraph Foundation" loading="lazy" decoding="async">
         <div style="padding: 20px;">
           <h3 style="font-size:18px; margin-bottom:8px;">LangGraph Foundation</h3>
           <p style="font-size:14px; color:var(--text-muted);">LangChain Academy · Valid thru Aug 2028</p>
-          <p style="font-size:12px; color:var(--text-muted); margin-top:4px; font-family:var(--ff-mono);">ID: smhpcvizvx
-          </p>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:4px; font-family:var(--ff-mono);">ID: smhpcvizvx</p>
         </div>
       </div>
-      <div class="cert-card"
-        style="background:var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
-        <img src="public/certs/langchain.jpg"
-          style="width:100%; height:200px; object-fit: cover; border-bottom: 1px solid var(--border);"
-          alt="LangChain Foundation" loading="lazy" decoding="async">
+      <div class="cert-card" onclick="openAwardLightbox(this)">
+        <img src="public/certs/langchain.jpg" alt="LangChain Foundation" loading="lazy" decoding="async">
         <div style="padding: 20px;">
           <h3 style="font-size:18px; margin-bottom:8px;">LangChain Foundation</h3>
           <p style="font-size:14px; color:var(--text-muted);">LangChain Academy · Valid thru Aug 2028</p>
-          <p style="font-size:12px; color:var(--text-muted); margin-top:4px; font-family:var(--ff-mono);">ID: kxdm7hiccy
-          </p>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:4px; font-family:var(--ff-mono);">ID: kxdm7hiccy</p>
         </div>
       </div>
-      <div class="cert-card"
-        style="background:var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
-        <img src="public/certs/cisco.png"
-          style="width:100%; height:200px; object-fit: cover; border-bottom: 1px solid var(--border);"
-          alt="Networking Basics" loading="lazy" decoding="async">
+      <div class="cert-card" onclick="openAwardLightbox(this)">
+        <img src="public/certs/cisco.png" alt="Networking Basics" loading="lazy" decoding="async">
         <div style="padding: 20px;">
           <h3 style="font-size:18px; margin-bottom:8px;">Networking Basics</h3>
           <p style="font-size:14px; color:var(--text-muted);">USTP-CDO · Dec 2024</p>
-          <p style="font-size:12px; color:var(--text-muted); margin-top:4px; font-family:var(--ff-mono);">Instr. Junar
-            Landicho</p>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:4px; font-family:var(--ff-mono);">Instr. Junar Landicho</p>
         </div>
       </div>
     </div>
@@ -480,11 +466,11 @@
     </div>
   </div>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-    <img class="lightbox-img" id="lightbox-img" src="" alt="">
-    <div class="lightbox-label" id="lightbox-label"></div>
+  <!-- AWARDS LIGHTBOX -->
+  <div class="lightbox" id="award-lightbox" onclick="closeAwardLightbox()">
+    <button class="lightbox-close" onclick="closeAwardLightbox()">✕</button>
+    <img class="lightbox-img" id="award-lightbox-img" src="" alt="">
+    <div class="lightbox-label" id="award-lightbox-label"></div>
   </div>
 
 
@@ -510,8 +496,8 @@
     </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox-overlay" id="lightbox">
+  <!-- PROJECT LIGHTBOX -->
+  <div class="lightbox-overlay" id="project-lightbox">
     <div class="lightbox-inner">
       <button class="lightbox-close" id="lb-close">✕</button>
       <img class="lightbox-media" id="lb-img" src="" alt="" />
@@ -564,17 +550,16 @@
       requestAnimationFrame(animCursor);
     })();
 
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', () => {
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest('a, button, .cert-card, .award-item, .gallery-item, .lightbox-thumb, .lightbox-close, .lightbox-btn')) {
         cur.style.width = '18px';
         cur.style.height = '18px';
         curR.style.opacity = '0';
-      });
-      el.addEventListener('mouseleave', () => {
+      } else {
         cur.style.width = '10px';
         cur.style.height = '10px';
         curR.style.opacity = '1';
-      });
+      }
     });
 
 
@@ -682,13 +667,17 @@
     }
 
     function attachGalleryListeners() {
-      document.querySelectorAll('.gallery-item, .gallery-more-overlay').forEach(el => {
-        el.addEventListener('click', e => {
-          const t = e.currentTarget;
-          const proj = parseInt(t.dataset.project ?? t.closest('[data-project]')?.dataset.project);
-          const index = parseInt(t.dataset.index ?? t.closest('[data-index]')?.dataset.index);
+      const container = document.getElementById('projects-container');
+      if (!container || container.dataset.listenerAttached) return;
+      container.dataset.listenerAttached = 'true';
+      container.addEventListener('click', e => {
+        const t = e.target.closest('.gallery-item, .gallery-more-overlay');
+        if (!t) return;
+        const proj = parseInt(t.dataset.project ?? t.closest('[data-project]')?.dataset.project);
+        const index = parseInt(t.dataset.index ?? t.closest('[data-index]')?.dataset.index);
+        if (!isNaN(proj) && !isNaN(index)) {
           openLightbox(proj, index);
-        });
+        }
       });
     }
 
@@ -790,7 +779,7 @@
        LIGHTBOX
        ════════════════════════════════════════════ */
     let lbP = 0, lbI = 0;
-    const lb = document.getElementById('lightbox');
+    const lb = document.getElementById('project-lightbox');
     const lbImg = document.getElementById('lb-img');
     const lbVid = document.getElementById('lb-vid');
     const lbC = document.getElementById('lb-counter');
@@ -916,21 +905,36 @@
     }
     boot();
 
-    // Award Lightbox (separate from the project gallery lightbox)
+    // Award / Cert Lightbox (separate from the project gallery lightbox)
     function openAwardLightbox(el) {
       const img = el.querySelector('img');
-      const label = el.querySelector('.award-overlay span');
-      document.getElementById('lightbox-img').src = img.src;
-      document.getElementById('lightbox-img').alt = img.alt;
-      document.getElementById('lightbox-label').textContent = label ? label.textContent : '';
-      document.getElementById('lightbox').classList.add('active');
+      const label = el.querySelector('.award-overlay span') || el.querySelector('h3');
+      const lbEl = document.getElementById('award-lightbox');
+      const lbImgEl = document.getElementById('award-lightbox-img');
+      const lbLblEl = document.getElementById('award-lightbox-label');
+      if (lbImgEl && img) {
+        lbImgEl.src = img.src;
+        lbImgEl.alt = img.alt || '';
+      }
+      if (lbLblEl) {
+        lbLblEl.textContent = label ? label.textContent.trim() : (img ? img.alt : '');
+      }
+      if (lbEl) {
+        lbEl.classList.add('active');
+      }
       document.body.style.overflow = 'hidden';
     }
     function closeAwardLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
+      const lbEl = document.getElementById('award-lightbox');
+      if (lbEl) {
+        lbEl.classList.remove('active');
+      }
       document.body.style.overflow = '';
     }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAwardLightbox(); });
+    document.addEventListener('keydown', e => {
+      const lbEl = document.getElementById('award-lightbox');
+      if (lbEl && lbEl.classList.contains('active') && e.key === 'Escape') closeAwardLightbox();
+    });
   </script>
 </body>
 
