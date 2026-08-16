@@ -1,5 +1,43 @@
 var PROJECTS = [
   {
+    "name": "Multi-Agent AI Harness & Platform Architecture — MeldCX",
+    "description": "During my internship at MeldCX, I designed and engineered a production-grade multi-agent AI harness on the Pi SDK using LangGraph. I implemented specialized concurrent subagents (architect, programmer, reviewer, researcher) with robust session and memory management, including observational memory, RAG-based recall, and resumable persistent subagents. My work included extensive R&D on reason-and-act (ReAct) workflows, building human-in-the-loop controls, auto-reprompts on failure, and robust guardrails via sandboxed execution. Furthermore, I extended agent capabilities to include hardware integration (Raspberry Pi MCP), web search, web scraping, ASR/TTS, and computer vision QA testing for customer behavior analysis.",
+    "skills": [
+      "LangGraph",
+      "Agentic Workflows",
+      "Large Language Models",
+      "Python",
+      "Docker",
+      "Sandboxing",
+      "Hardware Integration",
+      "Computer Vision"
+    ],
+    "deliverables": [
+      "Multi-agent AI harness on Pi SDK",
+      "Persistent session memory and RAG recall",
+      "Sandboxed and VPN-secured execution",
+      "QA tested computer vision customer behaviors",
+      "Automated testing and TUI widgets"
+    ],
+    "links": [],
+    "media": [
+      "/intern/Screen Recording 2026-08-12 130819.mp4",
+      "/intern/Screen Recording 2026-07-27 010018.mp4",
+      "/intern/a29f3ae8-e4a9-4184-9da2-c8d7e49bcdc0.mp4",
+      "/intern/IMG_20260629_133353.jpg",
+      "/intern/IMG_2494.jpg",
+      "/intern/IMG_2531 (1).jpg",
+      "/intern/1478c472-7d12-47e1-b137-b52ebd2afb80.jpg",
+      "/intern/image (4).png",
+      "/intern/image (3).png",
+      "/intern/image (1).png",
+      "/intern/Screenshot 2026-08-10 202439.png",
+      "/intern/Screenshot 2026-08-08 112250.png",
+      "/intern/Screenshot 2026-08-05 123258.png",
+      "/intern/Screenshot 2026-08-05 123001.png"
+    ]
+  },
+  {
     "name": "HEISCHED — Automated Scheduling System for Philippine Universities",
     "description": "My ongoing bachelor's thesis project is a decision support system for automating university course scheduling in Philippine Higher Education Institutions. It uses weighted constraint optimization to generate efficient, conflict-free, and practical timetables while adhering to CHED and institutional policies. The system provides administrators with flexible control over constraints and clear insights into schedule composition, significantly reducing manual workload.",
     "skills": [

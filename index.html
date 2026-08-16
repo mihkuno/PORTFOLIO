@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joeniño Cainday — Portfolio</title>
 
   <!-- Favicon -->
@@ -10,429 +11,665 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="public/styles.css">
 </head>
+
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-<div class="hero-glow"></div>
-<div class="hero-glow-2"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
 
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">JC<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-    </ul>
-  </div>
-</nav>
-
-<section id="hero">
-  <div class="hero-top">
-    <div class="hero-eyebrow" data-reveal data-delay="1">
-      Computer Scientist · USTP · Cagayan De Oro
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">JC<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="hero-name-row" data-reveal data-delay="2">
-      <h1 class="hero-name">
-        Joeniño
-        <span class="line-3">Cainday</span>
-      </h1>
-      <img class="hero-avatar" src="public/000001.webp" alt="Joeniño D. Cainday" />
-    </div>
-
-    <div class="hero-desc-row" data-reveal data-delay="3">
-      <p class="hero-tagline">
-        Operations Research · Computational Modelling &amp; Simulation · Building at the edge of code and science.
-      </p>
-      <div class="hero-ctas">
-        <a href="#projects" class="btn btn-primary">View Work</a>
-        <a href="#about" class="btn btn-outline">About Me</a>
+  <section id="hero">
+    <div class="hero-top">
+      <div class="hero-eyebrow" data-reveal data-delay="1">
+        Computer Scientist · USTP · Cagayan De Oro
       </div>
-    </div>
-  </div>
 
-  <div class="hero-bottom" data-reveal data-delay="4">
-    <div class="hero-badge">
-      <div class="pulse-dot"></div>
-      Available for research &amp; collaboration
-    </div>
-    <a href="#about" class="hero-scroll">
-      <div class="scroll-line"></div>
-      Scroll
-    </a>
-  </div>
-</section>
+      <div class="hero-name-row" data-reveal data-delay="2">
+        <h1 class="hero-name">
+          Joeniño
+          <span class="line-3">Cainday</span>
+        </h1>
+        <img class="hero-avatar" src="public/000001.webp" alt="Joeniño D. Cainday" />
+      </div>
 
-<div class="divider"></div>
-
-<!-- ABOUT -->
-<div class="section-wrap" id="about">
-  <div class="section-header" data-reveal>
-    <span class="section-num">01 —</span>
-    <h2 class="section-title">About <em>me</em></h2>
-  </div>
-
-  <div class="about-grid">
-    <div class="about-text" data-reveal="left">
-      <p>Computer Science student at the <strong>University of Science and Technology of Southern Philippines</strong>, driven by curiosity and continuous learning.</p>
-      <p>Focused on <strong>computational modeling, simulation, and optimization</strong>, applying theory to real-world problems.</p>
-      <div class="about-stats">
-        <div class="stat-item" data-reveal data-delay="2">
-          <div class="stat-num">4th</div>
-          <div class="stat-label">Year — BS Computer Science</div>
-        </div>
-        <div class="stat-item" data-reveal data-delay="1">
-          <div class="stat-num">100+</div>
-          <div class="stat-label">Commissioned Projects</div>
-        </div>
-        <div class="stat-item" data-reveal data-delay="3">
-          <div class="stat-num">50+</div>
-          <div class="stat-label">Tech Stacks</div>
-        </div>
-        <div class="stat-item" data-reveal data-delay="4">
-          <div class="stat-num">10+</div>
-          <div class="stat-label">Years Coding</div>
+      <div class="hero-desc-row" data-reveal data-delay="3">
+        <p class="hero-tagline">
+          I build computational systems for problems that don’t have simple answers — modelling complexity, optimizing
+          decisions, and engineering intelligent systems.
+        </p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">View Work</a>
+          <a href="#about" class="btn btn-outline">About Me</a>
         </div>
       </div>
     </div>
 
-    <div data-reveal="right">
-      <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;">Experience</div>
-      <div class="exp-list">
-        <div class="exp-item">
-          <div class="exp-icon">🎯</div>
-          <div>
-            <div class="exp-title">Asst. Core Lead — CS3</div>
-            <div class="exp-meta">Computer Science Student Society · Aug 2023 – Jul 2025</div>
-          </div>
-        </div>
-        <div class="exp-item">
-          <div class="exp-icon">🌍</div>
-          <div>
-            <div class="exp-title">GIS Developer — GDSC USTP</div>
-            <div class="exp-meta">Google Developer Student Clubs · Sep 2023 – Aug 2024</div>
-          </div>
-        </div>
-        <div class="exp-item">
-          <div class="exp-icon">💻</div>
-          <div>
-            <div class="exp-title">CS Lead — GDSC USTP</div>
-            <div class="exp-meta">Sep 2022 – Aug 2023 · Cagayan De Oro</div>
-          </div>
-        </div>
-        <div class="exp-item">
-          <div class="exp-icon">🚀</div>
-          <div>
-            <div class="exp-title">Frontend Developer Intern — Autofy.ai</div>
-            <div class="exp-meta">Mar 2024 – Apr 2024 · 2 months</div>
-          </div>
-        </div>
+    <div class="hero-bottom" data-reveal data-delay="4">
+      <div class="hero-badge">
+        <div class="pulse-dot"></div>
+        Available for research &amp; collaboration
       </div>
+      <a href="#about" class="hero-scroll">
+        <div class="scroll-line"></div>
+        Scroll
+      </a>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<!-- SKILLS -->
-<div id="skills" style="background:var(--bg2);">
-  <div class="section-wrap">
+  <!-- ABOUT -->
+  <div class="section-wrap" id="about">
     <div class="section-header" data-reveal>
-      <span class="section-num">02 —</span>
-      <h2 class="section-title">What I <em>bring</em></h2>
+      <span class="section-num">01 —</span>
+      <h2 class="section-title">About <em>me</em></h2>
     </div>
 
-    <div class="skills-layout">
-      <div class="skills-big-label">Skills</div>
+    <div class="about-grid">
+      <div class="about-text" data-reveal="left">
+        <p>Computer Scientist specializing in <strong>computational modelling, optimization, and intelligent
+            systems.</strong></p>
+        <p>Designs and builds data-driven decision tools, full-stack software, and autonomous multi-agent AI — turns
+          research and workflows into deployable, production-grade systems.</p>
+        <div class="about-stats">
+          <div class="stat-item" data-reveal data-delay="1">
+            <div class="stat-num">100+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-item" data-reveal data-delay="2">
+            <div class="stat-num">50+</div>
+            <div class="stat-label">Tech Stacks</div>
+          </div>
+          <div class="stat-item" data-reveal data-delay="3">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Yrs Coding</div>
+          </div>
+          <div class="stat-item" data-reveal data-delay="4">
+            <div class="stat-num">L2</div>
+            <div class="stat-label">TopCIT</div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal="right">
+        <div
+          style="font-family:var(--ff-mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;">
+          Professional Experience</div>
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-icon">🧠</div>
+            <div>
+              <div class="exp-title">Agentic AI Intern — MeldCX</div>
+              <div class="exp-meta">Jul 2026 – Aug 2026</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-icon">🚀</div>
+            <div>
+              <div class="exp-title">Front-End Developer Intern — Autofy.ai</div>
+              <div class="exp-meta">Mar 2024 – Apr 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="font-family:var(--ff-mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;margin-top:24px;">
+          Volunteering</div>
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-icon">🎯</div>
+            <div>
+              <div class="exp-title">Asst. Core Lead — CS³</div>
+              <div class="exp-meta">Computer Science Student Society USTP-CDO · Aug 2023 – Jul 2025</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-icon">🌍</div>
+            <div>
+              <div class="exp-title">GIS Developer & CS Lead — GDSC</div>
+              <div class="exp-meta">Google Developer Groups USTP-CDO · Aug 2022 – Jul 2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SKILLS -->
+  <div id="skills" style="background:var(--bg2);">
+    <div class="section-wrap">
+      <div class="section-header" data-reveal>
+        <span class="section-num">02 —</span>
+        <h2 class="section-title">What I <em>bring</em></h2>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skills-big-label">Skills</div>
+        <div>
+          <div class="skill-domains" data-reveal>
+
+            <div class="skill-domain">
+              <div class="skill-domain-header">
+                <span class="skill-domain-icon">🧠</span>
+                <span class="skill-domain-name">Artificial Intelligence &amp; Machine Learning</span>
+              </div>
+              <div class="skill-domain-tags">
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Computer Vision</span>
+                <span class="skill-tag">Large Language Models</span>
+                <span class="skill-tag">Neural Networks</span>
+                <span class="skill-tag">Agentic Workflows</span>
+                <span class="skill-tag">RAG &amp; Knowledge Graphs</span>
+              </div>
+            </div>
+
+            <div class="skill-domain">
+              <div class="skill-domain-header">
+                <span class="skill-domain-icon">📊</span>
+                <span class="skill-domain-name">Operations Research</span>
+              </div>
+              <div class="skill-domain-tags">
+                <span class="skill-tag">Constraint Satisfaction</span>
+                <span class="skill-tag">Computational Modelling &amp; Simulation</span>
+                <span class="skill-tag">Algorithms &amp; Optimization</span>
+                <span class="skill-tag">Decision Support Systems</span>
+              </div>
+            </div>
+
+            <div class="skill-domain">
+              <div class="skill-domain-header">
+                <span class="skill-domain-icon">💻</span>
+                <span class="skill-domain-name">Software Engineering</span>
+              </div>
+              <div class="skill-domain-tags">
+                <span class="skill-tag">Web Development</span>
+                <span class="skill-tag">Mobile Development</span>
+                <span class="skill-tag">SQL / NoSQL</span>
+                <span class="skill-tag">Server-Side Rendering</span>
+                <span class="skill-tag">Serverless &amp; Cloud Computing</span>
+                <span class="skill-tag">Distributed Computing</span>
+              </div>
+            </div>
+
+            <div class="skill-domain">
+              <div class="skill-domain-header">
+                <span class="skill-domain-icon">⚙️</span>
+                <span class="skill-domain-name">Workflow Automation &amp; IoT</span>
+              </div>
+              <div class="skill-domain-tags">
+                <span class="skill-tag">Internet of Things</span>
+                <span class="skill-tag">Hardware Integration</span>
+                <span class="skill-tag">n8n &amp; Agentic Pipelines</span>
+                <span class="skill-tag">Web Scraping</span>
+              </div>
+            </div>
+
+            <div class="skill-domain">
+              <div class="skill-domain-header">
+                <span class="skill-domain-icon">🛡️</span>
+                <span class="skill-domain-name">Cybersecurity</span>
+              </div>
+              <div class="skill-domain-tags">
+                <span class="skill-tag">Ethical Hacking</span>
+                <span class="skill-tag">Capture the Flag</span>
+                <span class="skill-tag">Sandboxed Execution</span>
+              </div>
+            </div>
+
+            <div class="skill-domain">
+              <div class="skill-domain-header">
+                <span class="skill-domain-icon">🗺️</span>
+                <span class="skill-domain-name">Geospatial</span>
+              </div>
+              <div class="skill-domain-tags">
+                <span class="skill-tag">Geographic Information Systems</span>
+                <span class="skill-tag">Photogrammetry</span>
+                <span class="skill-tag">3D Rendering</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tech-row" data-reveal data-delay="2">
+            <div class="tech-row-label">Tech Stack</div>
+            <div class="tech-stack-grid" id="tech-stack-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- EDUCATION -->
+  <div class="section-wrap" id="education">
+    <div class="section-header" data-reveal>
+      <span class="section-num">03 —</span>
+      <h2 class="section-title">Academic <em>journey</em></h2>
+    </div>
+
+    <div class="edu-timeline">
+      <div class="edu-item" data-reveal data-delay="1">
+        <div class="edu-dot"></div>
+        <div class="edu-year">2022 – 2027</div>
+        <div class="edu-school">University of Science and Technology of Southern Philippines</div>
+        <div class="edu-degree">BS Computer Science — Computational Modelling and Simulation · 4th Year</div>
+        <div class="edu-activities">Google Developer Student Clubs · CS³ Academic Organization</div>
+        <span class="edu-honor">🏅 Dean's Lister</span>
+      </div>
+      <div class="edu-item" data-reveal data-delay="2">
+        <div class="edu-dot"></div>
+        <div class="edu-year">2021 – 2022</div>
+        <div class="edu-school">Iligan Computer Institute</div>
+        <div class="edu-degree">TVL ICT — Web Development · Grade 12</div>
+        <div class="edu-activities">Google Development Student Club – Xavier</div>
+        <span class="edu-honor">🏅 High Honor &amp; DOST Top 20 Finalist Award</span>
+      </div>
+      <div class="edu-item" data-reveal data-delay="3">
+        <div class="edu-dot"></div>
+        <div class="edu-year">2020 – 2021</div>
+        <div class="edu-school">Capitol University</div>
+        <div class="edu-degree">STEM — Programming · Grade 11</div>
+        <div class="edu-activities">Technology Literacy Club</div>
+        <span class="edu-honor">🏆 Highest Honor &amp; Student of the Year</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section-wrap" id="certifications">
+    <div class="section-header" data-reveal>
+      <span class="section-num">04 —</span>
+      <h2 class="section-title">Verified <em>certifications</em></h2>
+    </div>
+
+    <div class="certs-grid"
+      style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px;"
+      data-reveal>
+      <div class="cert-card"
+        style="background:var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+        <img src="public/certs/langgraph.jpg"
+          style="width:100%; height:200px; object-fit: cover; border-bottom: 1px solid var(--border);"
+          alt="LangGraph Foundation" loading="lazy" decoding="async">
+        <div style="padding: 20px;">
+          <h3 style="font-size:18px; margin-bottom:8px;">LangGraph Foundation</h3>
+          <p style="font-size:14px; color:var(--text-muted);">LangChain Academy · Valid thru Aug 2028</p>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:4px; font-family:var(--ff-mono);">ID: smhpcvizvx
+          </p>
+        </div>
+      </div>
+      <div class="cert-card"
+        style="background:var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+        <img src="public/certs/langchain.jpg"
+          style="width:100%; height:200px; object-fit: cover; border-bottom: 1px solid var(--border);"
+          alt="LangChain Foundation" loading="lazy" decoding="async">
+        <div style="padding: 20px;">
+          <h3 style="font-size:18px; margin-bottom:8px;">LangChain Foundation</h3>
+          <p style="font-size:14px; color:var(--text-muted);">LangChain Academy · Valid thru Aug 2028</p>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:4px; font-family:var(--ff-mono);">ID: kxdm7hiccy
+          </p>
+        </div>
+      </div>
+      <div class="cert-card"
+        style="background:var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+        <img src="public/certs/cisco.png"
+          style="width:100%; height:200px; object-fit: cover; border-bottom: 1px solid var(--border);"
+          alt="Networking Basics" loading="lazy" decoding="async">
+        <div style="padding: 20px;">
+          <h3 style="font-size:18px; margin-bottom:8px;">Networking Basics</h3>
+          <p style="font-size:14px; color:var(--text-muted);">USTP-CDO · Dec 2024</p>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:4px; font-family:var(--ff-mono);">Instr. Junar
+            Landicho</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PROJECTS -->
+  <div class="section-wrap" id="projects">
+    <div class="section-header" data-reveal>
+      <span class="section-num">05 —</span>
+      <h2 class="section-title">Selected <em>work</em></h2>
+    </div>
+    <div class="projects-grid" id="projects-container"></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- OTHER AWARDS -->
+  <div class="section-wrap" id="other-awards">
+    <div class="section-header" data-reveal>
+      <span class="section-num">06 —</span>
+      <h2 class="section-title">Other <em>awards</em></h2>
+    </div>
+
+    <div class="awards-gallery" data-reveal>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/arduinoday_2021.png" loading="lazy" alt="Arduino Day 2021">
+        <div class="award-overlay"><span>Arduino Day 2021</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/cu_g11-IT_co-curr_appraisal.png" loading="lazy" alt="CU G11 IT Co-Curricular Appraisal">
+        <div class="award-overlay"><span>CU IT Co-Curricular Appraisal</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/cu_g11-IT_highesthonor.png" loading="lazy" alt="CU G11 Highest Honor">
+        <div class="award-overlay"><span>CU Highest Honor</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/cu_mathsci_representative.png" loading="lazy" alt="CU Math & Science Representative">
+        <div class="award-overlay"><span>CU Math &amp; Science Representative</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/dost_imake.wemake_proposal.jpg" loading="lazy" alt="DOST iMake.weMake Proposal">
+        <div class="award-overlay"><span>DOST iMake.weMake</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/dti_chess.jpeg" loading="lazy" alt="DTI Chess">
+        <div class="award-overlay"><span>DTI Chess Competition</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/dti_digitalmarketing.jpeg" loading="lazy" alt="DTI Digital Marketing">
+        <div class="award-overlay"><span>DTI Digital Marketing</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/gdsc_android_1.jpg" loading="lazy" alt="GDSC Android 1">
+        <div class="award-overlay"><span>GDSC Android Development</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/gdsc_android_2.jpg" loading="lazy" alt="GDSC Android 2">
+        <div class="award-overlay"><span>GDSC Android Development II</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/gdsc_cybersecurity.png" loading="lazy" alt="GDSC Cybersecurity">
+        <div class="award-overlay"><span>GDSC Cybersecurity</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/gdsc_github.png" loading="lazy" alt="GDSC GitHub">
+        <div class="award-overlay"><span>GDSC GitHub</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/gdsc_kotlin.jpg" loading="lazy" alt="GDSC Kotlin">
+        <div class="award-overlay"><span>GDSC Kotlin</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/ici_excel_contest.jpg" loading="lazy" alt="ICI Excel Contest">
+        <div class="award-overlay"><span>ICI Excel Contest</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/ici_mathsci_representative.png" loading="lazy" alt="ICI Math & Science Representative">
+        <div class="award-overlay"><span>ICI Math &amp; Science Representative</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/ici_networking.jpeg" loading="lazy" alt="ICI Networking">
+        <div class="award-overlay"><span>ICI Networking</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/ici_perdev_workshop.jpeg" loading="lazy" alt="ICI Personal Development Workshop">
+        <div class="award-overlay"><span>ICI Personal Development Workshop</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/pinoyrobotgames_AI.jpg" loading="lazy" alt="Pinoy Robot Games AI">
+        <div class="award-overlay"><span>Pinoy Robot Games — AI</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/pss_bestsubjects1.jpeg.jpeg" loading="lazy" alt="PSS Best Subjects 1">
+        <div class="award-overlay"><span>PSS Best in Subjects I</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/pss_bestsubjects2.jpeg" loading="lazy" alt="PSS Best Subjects 2">
+        <div class="award-overlay"><span>PSS Best in Subjects II</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/pss_library.jpeg" loading="lazy" alt="PSS Library">
+        <div class="award-overlay"><span>PSS Library Award</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/pss_mathsci.jpeg" loading="lazy" alt="PSS Math & Science">
+        <div class="award-overlay"><span>PSS Math &amp; Science</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/rotaryyouth_appreciation.jpeg" loading="lazy" alt="Rotary Youth Appreciation">
+        <div class="award-overlay"><span>Rotary Youth — Appreciation</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/rotaryyouth_commendation.jpeg.jpeg" loading="lazy" alt="Rotary Youth Commendation">
+        <div class="award-overlay"><span>Rotary Youth — Commendation</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/sololearn_c++.png" loading="lazy" alt="SoloLearn C++">
+        <div class="award-overlay"><span>SoloLearn — C++</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/sololearn_html.jpg" loading="lazy" alt="SoloLearn HTML">
+        <div class="award-overlay"><span>SoloLearn — HTML</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/sololearn_java.png" loading="lazy" alt="SoloLearn Java">
+        <div class="award-overlay"><span>SoloLearn — Java</span></div>
+      </div>
+      <div class="award-item" onclick="openLightbox(this)">
+        <img src="public/certs/sololearn_php.jpg" loading="lazy" alt="SoloLearn PHP">
+        <div class="award-overlay"><span>SoloLearn — PHP</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <div class="lightbox-label" id="lightbox-label"></div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
       <div>
-        <div class="skills-cats" data-reveal>
-          <div class="skill-cat">
-            <div class="skill-cat-label">Core CS</div>
-            <div class="skill-tags">
-              <span class="skill-tag">Operations Research</span>
-              <span class="skill-tag">Constraint Satisfaction</span>
-              <span class="skill-tag">Computational Modelling & Simulation</span>
-              <span class="skill-tag">Algorithms & Optimization</span>
-            </div>
-          </div>
-          <div class="skill-cat">
-            <div class="skill-cat-label">AI / ML</div>
-            <div class="skill-tags">
-              <span class="skill-tag">Machine Learning</span>
-              <span class="skill-tag">Computer Vision</span>
-              <span class="skill-tag">Large Language Models</span>
-              <span class="skill-tag">Neural Networks</span>
-            </div>
-          </div>
-          <div class="skill-cat">
-            <div class="skill-cat-label">Development</div>
-            <div class="skill-tags">
-              <span class="skill-tag">Web Dev</span>
-              <span class="skill-tag">Mobile Dev</span>
-              <span class="skill-tag">SQL / NoSQL</span>
-              <span class="skill-tag">Internet of Things</span>
-              <span class="skill-tag">Server-Side Rendering</span>
-              <span class="skill-tag">Serverless and Cloud Computing</span>
-              <span class="skill-tag">Cybersecurity</span>
-              <span class="skill-tag">Distributed Computing</span>
-              <span class="skill-tag">Web Scraping</span>
-              <span class="skill-tag">Capture the Flag</span>
-            </div>
-          </div>
-          <div class="skill-cat">
-            <div class="skill-cat-label">Geospatial</div>
-            <div class="skill-tags">
-              <span class="skill-tag">Geographic Information Systems</span>
-              <span class="skill-tag">Photogrammetry</span>
-              <span class="skill-tag">3D Rendering</span>
-            </div>
-          </div>
+        <h3 class="footer-headline" data-reveal>Let's work<br><em>together.</em></h3>
+        <p class="footer-sub">Open for collaborations, research, and opportunities in CS &amp; OR.</p>
+        <div class="footer-links">
+          <a class="footer-link" target="_blank" href="https://github.com/mihkuno">GitHub</a>
+          <a class="footer-link" target="_blank" href="https://www.linkedin.com/in/mihkuno">LinkedIn</a>
+          <a class="footer-link" target="_blank"
+            href="https://www.facebook.com/profile.php?id=61579209403330">Facebook</a>
+          <a class="footer-link" target="_blank" href="mailto:caindayjoeninyo@gmail.com">Email</a>
         </div>
-
-        <div class="tech-row" data-reveal data-delay="2">
-          <div class="tech-row-label">Tech Stack</div>
-          <div class="tech-stack-grid" id="tech-stack-grid"></div>
-        </div>
+        <div style="margin-top:40px;font-size:11px;color:var(--text-muted);font-family:var(--ff-mono);">© 2025 Joeniño
+          D. Cainday. All rights reserved.</div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-monogram">JC</div>
       </div>
     </div>
-  </div>
-</div>
+  </footer>
 
-<div class="divider"></div>
-
-<!-- EDUCATION -->
-<div class="section-wrap" id="education">
-  <div class="section-header" data-reveal>
-    <span class="section-num">03 —</span>
-    <h2 class="section-title">Academic <em>journey</em></h2>
-  </div>
-
-  <div class="edu-timeline">
-    <div class="edu-item" data-reveal data-delay="1">
-      <div class="edu-dot"></div>
-      <div class="edu-year">2022 – 2027</div>
-      <div class="edu-school">University of Science and Technology of Southern Philippines</div>
-      <div class="edu-degree">BS Computer Science — Computational Modelling and Simulation · 4th Year</div>
-      <div class="edu-activities">Google Developer Student Clubs · CS³ Academic Organization</div>
-      <span class="edu-honor">🏅 Dean's Lister</span>
-    </div>
-    <div class="edu-item" data-reveal data-delay="2">
-      <div class="edu-dot"></div>
-      <div class="edu-year">2021 – 2022</div>
-      <div class="edu-school">Iligan Computer Institute</div>
-      <div class="edu-degree">TVL ICT — Web Development · Grade 12</div>
-      <div class="edu-activities">Google Development Student Club – Xavier</div>
-      <span class="edu-honor">🏅 High Honor &amp; DOST Top 20 Finalist Award</span>
-    </div>
-    <div class="edu-item" data-reveal data-delay="3">
-      <div class="edu-dot"></div>
-      <div class="edu-year">2020 – 2021</div>
-      <div class="edu-school">Capitol University</div>
-      <div class="edu-degree">STEM — Programming · Grade 11</div>
-      <div class="edu-activities">Technology Literacy Club</div>
-      <span class="edu-honor">🏆 Highest Honor &amp; Student of the Year</span>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- PROJECTS -->
-<div class="section-wrap" id="projects">
-  <div class="section-header" data-reveal>
-    <span class="section-num">04 —</span>
-    <h2 class="section-title">Selected <em>work</em></h2>
-  </div>
-  <div class="projects-grid" id="projects-container"></div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <h3 class="footer-headline" data-reveal>Let's work<br><em>together.</em></h3>
-      <p class="footer-sub">Open for collaborations, research, and opportunities in CS &amp; OR.</p>
-      <div class="footer-links">
-        <a class="footer-link" target="_blank" href="https://github.com/mihkuno">GitHub</a>
-        <a class="footer-link" target="_blank" href="https://www.linkedin.com/in/mihkuno">LinkedIn</a>
-        <a class="footer-link" target="_blank" href="https://www.facebook.com/quaxode/">Facebook</a>
-        <a class="footer-link" target="_blank" href="mailto:caindayjoeninyo@gmail.com">Email</a>
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lb-close">✕</button>
+      <img class="lightbox-media" id="lb-img" src="" alt="" />
+      <video class="lightbox-media" id="lb-vid" controls style="display:none;"></video>
+      <div class="lightbox-nav">
+        <button class="lightbox-btn" id="lb-prev">‹</button>
+        <span class="lightbox-counter" id="lb-counter"></span>
+        <button class="lightbox-btn" id="lb-next">›</button>
       </div>
-      <div style="margin-top:40px;font-size:11px;color:var(--text-muted);font-family:var(--ff-mono);">© 2025 Joeniño D. Cainday. All rights reserved.</div>
-    </div>
-    <div class="footer-right">
-      <div class="footer-monogram">JC</div>
+      <div class="lightbox-thumbs" id="lb-thumbs"></div>
     </div>
   </div>
-</footer>
 
-<!-- LIGHTBOX -->
-<div class="lightbox-overlay" id="lightbox">
-  <div class="lightbox-inner">
-    <button class="lightbox-close" id="lb-close">✕</button>
-    <img class="lightbox-media" id="lb-img" src="" alt="" />
-    <video class="lightbox-media" id="lb-vid" controls style="display:none;"></video>
-    <div class="lightbox-nav">
-      <button class="lightbox-btn" id="lb-prev">‹</button>
-      <span class="lightbox-counter" id="lb-counter"></span>
-      <button class="lightbox-btn" id="lb-next">›</button>
-    </div>
-    <div class="lightbox-thumbs" id="lb-thumbs"></div>
-  </div>
-</div>
+  <!-- FIX 4: defer projects script so it doesn't block parse -->
+  <script src="public/projects.js" defer></script>
+  <script src="public/techstack.js" defer></script>
 
-<!-- FIX 4: defer projects script so it doesn't block parse -->
-<script src="public/projects.js" defer></script>
-<script src="public/techstack.js" defer></script>
-
-<script>
-
-  
-/* ════════════════════════════════════════════
-   FIX 3: CURSOR — throttled via dirty flag
-   Only recalculates & writes DOM when mouse
-   has actually moved or ring hasn't settled.
-   ════════════════════════════════════════════ */
-const cur  = document.getElementById('cursor');
-const curR = document.getElementById('cursorRing');
-let mx = -100, my = -100, rx = -100, ry = -100;
-let cursorDirty = false;
-
-document.addEventListener('mousemove', e => {
-  mx = e.clientX;
-  my = e.clientY;
-  cursorDirty = true;
-});
-
-(function animCursor() {
-  if (cursorDirty) {
-    cur.style.left = mx + 'px';
-    cur.style.top  = my + 'px';
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    curR.style.left = rx + 'px';
-    curR.style.top  = ry + 'px';
-    // Stop updating once ring has settled within 0.5px
-    if (Math.abs(mx - rx) < 0.5 && Math.abs(my - ry) < 0.5) {
-      cursorDirty = false;
-    }
-  }
-  requestAnimationFrame(animCursor);
-})();
-
-document.querySelectorAll('a, button').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cur.style.width  = '18px';
-    cur.style.height = '18px';
-    curR.style.opacity = '0';
-  });
-  el.addEventListener('mouseleave', () => {
-    cur.style.width  = '10px';
-    cur.style.height = '10px';
-    curR.style.opacity = '1';
-  });
-});
+  <script>
 
 
-/* ════════════════════════════════════════════
-   REVEAL OBSERVER
-   ════════════════════════════════════════════ */
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObserver.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    /* ════════════════════════════════════════════
+       FIX 3: CURSOR — throttled via dirty flag
+       Only recalculates & writes DOM when mouse
+       has actually moved or ring hasn't settled.
+       ════════════════════════════════════════════ */
+    const cur = document.getElementById('cursor');
+    const curR = document.getElementById('cursorRing');
+    let mx = -100, my = -100, rx = -100, ry = -100;
+    let cursorDirty = false;
 
-function observeReveals() {
-  document.querySelectorAll('[data-reveal]:not(.visible)').forEach(el => {
-    revealObserver.observe(el);
-  });
-}
-observeReveals();
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX;
+      my = e.clientY;
+      cursorDirty = true;
+    });
 
-
-/* ════════════════════════════════════════════
-   FIX 1: LAZY VIDEO OBSERVER
-   Videos use data-src and only load + play
-   when they enter the viewport (+ 200px margin).
-   ════════════════════════════════════════════ */
-const videoObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const v = e.target;
-      if (v.dataset.src) {
-        v.src = v.dataset.src;
-        v.load();
-        v.play().catch(() => {}); // ignore autoplay policy errors silently
-        delete v.dataset.src;    // prevent re-triggering
+    (function animCursor() {
+      if (cursorDirty) {
+        cur.style.left = mx + 'px';
+        cur.style.top = my + 'px';
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        curR.style.left = rx + 'px';
+        curR.style.top = ry + 'px';
+        // Stop updating once ring has settled within 0.5px
+        if (Math.abs(mx - rx) < 0.5 && Math.abs(my - ry) < 0.5) {
+          cursorDirty = false;
+        }
       }
-      videoObserver.unobserve(v);
+      requestAnimationFrame(animCursor);
+    })();
+
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cur.style.width = '18px';
+        cur.style.height = '18px';
+        curR.style.opacity = '0';
+      });
+      el.addEventListener('mouseleave', () => {
+        cur.style.width = '10px';
+        cur.style.height = '10px';
+        curR.style.opacity = '1';
+      });
+    });
+
+
+    /* ════════════════════════════════════════════
+       REVEAL OBSERVER
+       ════════════════════════════════════════════ */
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    function observeReveals() {
+      document.querySelectorAll('[data-reveal]:not(.visible)').forEach(el => {
+        revealObserver.observe(el);
+      });
     }
-  });
-}, { rootMargin: '200px 0px' });
+    observeReveals();
 
 
-/* ════════════════════════════════════════════
-   PROJECT CARD HELPERS
-   ════════════════════════════════════════════ */
-const GH_ICON   = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7C6.73 19.91 6.14 18 6.14 18c-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.115 2.51.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.16.58.67.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>`;
-const LINK_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+    /* ════════════════════════════════════════════
+       FIX 1: LAZY VIDEO OBSERVER
+       Videos use data-src and only load + play
+       when they enter the viewport (+ 200px margin).
+       ════════════════════════════════════════════ */
+    const videoObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const v = e.target;
+          if (v.dataset.src) {
+            v.src = v.dataset.src;
+            v.load();
+            v.play().catch(() => { }); // ignore autoplay policy errors silently
+            delete v.dataset.src;    // prevent re-triggering
+          }
+          videoObserver.unobserve(v);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
 
-function isVideo(url) {
-  return /\.(mp4|webm|ogg)$/i.test(url);
-}
 
-function buildGallery(media, idx) {
-  if (!media || !media.length) return '';
-  const showMax = Math.min(media.length, 4);
-  const extra   = media.length - showMax;
-  const cls     = ['', 'n1', 'n2', 'n3', 'n4', 'nmore'][Math.min(media.length, 5)] || 'nmore';
-  let items = '';
-  for (let i = 0; i < showMax; i++) {
-    const url    = media[i];
-    const isLast = i === showMax - 1 && extra > 0;
+    /* ════════════════════════════════════════════
+       PROJECT CARD HELPERS
+       ════════════════════════════════════════════ */
+    const GH_ICON = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7C6.73 19.91 6.14 18 6.14 18c-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.115 2.51.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.16.58.67.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>`;
+    const LINK_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
 
-    /*
-     * FIX 1 (video): use data-src instead of src so the file isn't
-     * fetched until the card scrolls into view.
-     * FIX 1 (image): loading="lazy" is kept for native browser lazy-load.
-     */
-    const el = isVideo(url)
-      ? `<video data-src="${url}" muted loop playsinline class="lazy-video" style="width:100%;height:100%;object-fit:cover;"></video>`
-      : `<img src="${url}" alt="media ${i + 1}" loading="lazy" decoding="async" />`;
+    function isVideo(url) {
+      return /\.(mp4|webm|ogg)$/i.test(url);
+    }
 
-    items += `<div class="gallery-item" data-project="${idx}" data-index="${i}">${el}${isLast ? `<div class="gallery-more-overlay" data-project="${idx}" data-index="${i}">+${extra + 1}</div>` : ''}</div>`;
-  }
-  return `<div class="project-gallery"><div class="gallery-grid ${cls}">${items}</div></div>`;
-}
+    function buildGallery(media, idx) {
+      if (!media || !media.length) return '';
+      const showMax = Math.min(media.length, 4);
+      const extra = media.length - showMax;
+      const cls = ['', 'n1', 'n2', 'n3', 'n4', 'nmore'][Math.min(media.length, 5)] || 'nmore';
+      let items = '';
+      for (let i = 0; i < showMax; i++) {
+        const url = media[i];
+        const isLast = i === showMax - 1 && extra > 0;
 
-function buildLinks(links) {
-  if (!links || !links.length) return '';
-  return links.map(l => {
-    const isGH = /github/i.test(l.label);
-    return `<a class="project-link" href="${l.url}" target="_blank" rel="noopener">${isGH ? GH_ICON : LINK_ICON}${l.label}</a>`;
-  }).join('');
-}
+        /*
+         * FIX 1 (video): use data-src instead of src so the file isn't
+         * fetched until the card scrolls into view.
+         * FIX 1 (image): loading="lazy" is kept for native browser lazy-load.
+         */
+        const el = isVideo(url)
+          ? `<video data-src="${url}" muted loop playsinline class="lazy-video" style="width:100%;height:100%;object-fit:cover;"></video>`
+          : `<img src="${url}" alt="media ${i + 1}" loading="lazy" decoding="async" />`;
 
-/* Build a single card's HTML string (pure — no DOM side-effects) */
-function buildCardHTML(p, i) {
-  const delHTML    = p.deliverables?.length
-    ? `<div class="project-deliverables"><div class="project-deliverables-title">Deliverables</div><ul>${p.deliverables.map(d => `<li>${d}</li>`).join('')}</ul></div>`
-    : '';
-  const skillsHTML = p.skills?.length
-    ? `<div class="project-skills">${p.skills.map(s => `<span class="project-skill">${s}</span>`).join('')}</div>`
-    : '';
-  return `<div class="project-card" data-reveal data-delay="${(i % 3) + 1}">
+        items += `<div class="gallery-item" data-project="${idx}" data-index="${i}">${el}${isLast ? `<div class="gallery-more-overlay" data-project="${idx}" data-index="${i}">+${extra + 1}</div>` : ''}</div>`;
+      }
+      return `<div class="project-gallery"><div class="gallery-grid ${cls}">${items}</div></div>`;
+    }
+
+    function buildLinks(links) {
+      if (!links || !links.length) return '';
+      return links.map(l => {
+        const isGH = /github/i.test(l.label);
+        return `<a class="project-link" href="${l.url}" target="_blank" rel="noopener">${isGH ? GH_ICON : LINK_ICON}${l.label}</a>`;
+      }).join('');
+    }
+
+    /* Build a single card's HTML string (pure — no DOM side-effects) */
+    function buildCardHTML(p, i) {
+      const delHTML = p.deliverables?.length
+        ? `<div class="project-deliverables"><div class="project-deliverables-title">Deliverables</div><ul>${p.deliverables.map(d => `<li>${d}</li>`).join('')}</ul></div>`
+        : '';
+      const skillsHTML = p.skills?.length
+        ? `<div class="project-skills">${p.skills.map(s => `<span class="project-skill">${s}</span>`).join('')}</div>`
+        : '';
+      return `<div class="project-card" data-reveal data-delay="${(i % 3) + 1}">
     ${buildGallery(p.media, i)}
     <div class="project-body">
       <div class="project-idx">0${i + 1}</div>
@@ -442,242 +679,259 @@ function buildCardHTML(p, i) {
       <div class="project-links">${buildLinks(p.links)}</div>
     </div>
   </div>`;
-}
+    }
 
-function attachGalleryListeners() {
-  document.querySelectorAll('.gallery-item, .gallery-more-overlay').forEach(el => {
-    el.addEventListener('click', e => {
-      const t = e.currentTarget;
-      const proj  = parseInt(t.dataset.project  ?? t.closest('[data-project]')?.dataset.project);
-      const index = parseInt(t.dataset.index    ?? t.closest('[data-index]')?.dataset.index);
-      openLightbox(proj, index);
-    });
-  });
-}
+    function attachGalleryListeners() {
+      document.querySelectorAll('.gallery-item, .gallery-more-overlay').forEach(el => {
+        el.addEventListener('click', e => {
+          const t = e.currentTarget;
+          const proj = parseInt(t.dataset.project ?? t.closest('[data-project]')?.dataset.project);
+          const index = parseInt(t.dataset.index ?? t.closest('[data-index]')?.dataset.index);
+          openLightbox(proj, index);
+        });
+      });
+    }
 
-/* ════════════════════════════════════════════
-   FIX 2: CHUNKED PROJECT RENDERING
-   Renders CHUNK_SIZE cards per idle callback
-   so the main thread never freezes on large
-   project lists. Falls back to setTimeout when
-   requestIdleCallback is unavailable (Safari<).
-   ════════════════════════════════════════════ */
-/* ════════════════════════════════════════════
-   OPTIMIZED INFINITE SCROLL PROJECT RENDERING
-   ════════════════════════════════════════════ */
-const CHUNK_SIZE = 9;           // 9 projects per load (feels smooth)
-let currentIndex = 0;
-let isLoading = false;
-let sentinelObserver = null;
+    /* ════════════════════════════════════════════
+       FIX 2: CHUNKED PROJECT RENDERING
+       Renders CHUNK_SIZE cards per idle callback
+       so the main thread never freezes on large
+       project lists. Falls back to setTimeout when
+       requestIdleCallback is unavailable (Safari<).
+       ════════════════════════════════════════════ */
+    /* ════════════════════════════════════════════
+       OPTIMIZED INFINITE SCROLL PROJECT RENDERING
+       ════════════════════════════════════════════ */
+    const CHUNK_SIZE = 9;           // 9 projects per load (feels smooth)
+    let currentIndex = 0;
+    let isLoading = false;
+    let sentinelObserver = null;
 
-function renderProjects() {
-  const container = document.getElementById('projects-container');
-  if (typeof PROJECTS === 'undefined') {
-    setTimeout(renderProjects, 50);
-    return;
-  }
-
-  if (currentIndex === 0) container.innerHTML = ''; // first load
-
-  const end = Math.min(currentIndex + CHUNK_SIZE, PROJECTS.length);
-  const fragment = document.createDocumentFragment();
-
-  for (let i = currentIndex; i < end; i++) {
-    const wrapper = document.createElement('div');
-    wrapper.innerHTML = buildCardHTML(PROJECTS[i], i);
-    const card = wrapper.firstElementChild;
-    fragment.appendChild(card);
-
-    // Lazy-load videos inside this card
-    card.querySelectorAll('video.lazy-video').forEach(v => videoObserver.observe(v));
-  }
-
-  container.appendChild(fragment);
-
-  currentIndex = end;
-
-  observeReveals();
-  attachGalleryListeners();
-
-  // Create / move sentinel for infinite scroll
-  createOrUpdateSentinel(container);
-}
-
-function createOrUpdateSentinel(container) {
-  let sentinel = document.getElementById('projects-sentinel');
-
-  if (!sentinel) {
-    sentinel = document.createElement('div');
-    sentinel.id = 'projects-sentinel';
-    sentinel.style.height = '40px';
-    sentinel.style.marginTop = '40px';
-    container.parentElement.appendChild(sentinel);
-  }
-
-  // If no more projects left, remove sentinel
-  if (currentIndex >= PROJECTS.length) {
-    sentinel.remove();
-    if (sentinelObserver) sentinelObserver.disconnect();
-    return;
-  }
-
-  // Set up IntersectionObserver (only once)
-  if (!sentinelObserver) {
-    sentinelObserver = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting && !isLoading) {
-        loadNextChunk();
+    function renderProjects() {
+      const container = document.getElementById('projects-container');
+      if (typeof PROJECTS === 'undefined') {
+        setTimeout(renderProjects, 50);
+        return;
       }
-    }, { rootMargin: '300px 0px' }); // start loading a bit early
-  }
 
-  sentinelObserver.observe(sentinel);
-}
+      if (currentIndex === 0) container.innerHTML = ''; // first load
 
-function loadNextChunk() {
-  if (isLoading || currentIndex >= PROJECTS.length) return;
-  isLoading = true;
+      const end = Math.min(currentIndex + CHUNK_SIZE, PROJECTS.length);
+      const fragment = document.createDocumentFragment();
 
-  // Optional: small loading indicator
-  const sentinel = document.getElementById('projects-sentinel');
-  if (sentinel) sentinel.innerHTML = `<div style="text-align:center;padding:20px;font-family:var(--ff-mono);font-size:13px;color:var(--text-muted);">Loading more projects…</div>`;
+      for (let i = currentIndex; i < end; i++) {
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = buildCardHTML(PROJECTS[i], i);
+        const card = wrapper.firstElementChild;
+        fragment.appendChild(card);
 
-  // Small delay so it feels natural
-  setTimeout(() => {
-    renderProjects();   // this will load the next chunk and re-create sentinel
-    isLoading = false;
-  }, 180);
-}
+        // Lazy-load videos inside this card
+        card.querySelectorAll('video.lazy-video').forEach(v => videoObserver.observe(v));
+      }
+
+      container.appendChild(fragment);
+
+      currentIndex = end;
+
+      observeReveals();
+      attachGalleryListeners();
+
+      // Create / move sentinel for infinite scroll
+      createOrUpdateSentinel(container);
+    }
+
+    function createOrUpdateSentinel(container) {
+      let sentinel = document.getElementById('projects-sentinel');
+
+      if (!sentinel) {
+        sentinel = document.createElement('div');
+        sentinel.id = 'projects-sentinel';
+        sentinel.style.height = '40px';
+        sentinel.style.marginTop = '40px';
+        container.parentElement.appendChild(sentinel);
+      }
+
+      // If no more projects left, remove sentinel
+      if (currentIndex >= PROJECTS.length) {
+        sentinel.remove();
+        if (sentinelObserver) sentinelObserver.disconnect();
+        return;
+      }
+
+      // Set up IntersectionObserver (only once)
+      if (!sentinelObserver) {
+        sentinelObserver = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting && !isLoading) {
+            loadNextChunk();
+          }
+        }, { rootMargin: '300px 0px' }); // start loading a bit early
+      }
+
+      sentinelObserver.observe(sentinel);
+    }
+
+    function loadNextChunk() {
+      if (isLoading || currentIndex >= PROJECTS.length) return;
+      isLoading = true;
+
+      // Optional: small loading indicator
+      const sentinel = document.getElementById('projects-sentinel');
+      if (sentinel) sentinel.innerHTML = `<div style="text-align:center;padding:20px;font-family:var(--ff-mono);font-size:13px;color:var(--text-muted);">Loading more projects…</div>`;
+
+      // Small delay so it feels natural
+      setTimeout(() => {
+        renderProjects();   // this will load the next chunk and re-create sentinel
+        isLoading = false;
+      }, 180);
+    }
 
 
-/* ════════════════════════════════════════════
-   LIGHTBOX
-   ════════════════════════════════════════════ */
-let lbP = 0, lbI = 0;
-const lb    = document.getElementById('lightbox');
-const lbImg = document.getElementById('lb-img');
-const lbVid = document.getElementById('lb-vid');
-const lbC   = document.getElementById('lb-counter');
-const lbTh  = document.getElementById('lb-thumbs');
+    /* ════════════════════════════════════════════
+       LIGHTBOX
+       ════════════════════════════════════════════ */
+    let lbP = 0, lbI = 0;
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const lbVid = document.getElementById('lb-vid');
+    const lbC = document.getElementById('lb-counter');
+    const lbTh = document.getElementById('lb-thumbs');
 
-/* Clean video thumbnail SVG */
-const VIDEO_THUMB = 'data:image/svg+xml,' + encodeURIComponent(
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 40" width="56" height="40">
+    /* Clean video thumbnail SVG */
+    const VIDEO_THUMB = 'data:image/svg+xml,' + encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 40" width="56" height="40">
      <rect width="56" height="40" fill="#333" rx="4"/>
      <polygon points="20,12 40,20 20,28" fill="#fff"/>
    </svg>`
-);
+    );
 
-function openLightbox(p, i) {
-  lbP = p; lbI = i;
-  renderLB();
-  lb.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
+    function openLightbox(p, i) {
+      lbP = p; lbI = i;
+      renderLB();
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
 
-function closeLightbox() {
-  lb.classList.remove('active');
-  document.body.style.overflow = '';
-  lbVid.pause();
-}
+    function closeLightbox() {
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+      lbVid.pause();
+    }
 
-function renderLB() {
-  const media = PROJECTS[lbP].media;
-  const url   = media[lbI];
-  lbC.textContent = `${lbI + 1} / ${media.length}`;
+    function renderLB() {
+      const media = PROJECTS[lbP].media;
+      const url = media[lbI];
+      lbC.textContent = `${lbI + 1} / ${media.length}`;
 
-  if (isVideo(url)) {
-    lbImg.style.display = 'none';
-    lbVid.style.display = 'block';
-    lbVid.src = url;
-  } else {
-    lbVid.style.display = 'none';
-    lbVid.pause();
-    lbImg.style.display = 'block';
-    lbImg.src = url;
-  }
+      if (isVideo(url)) {
+        lbImg.style.display = 'none';
+        lbVid.style.display = 'block';
+        lbVid.src = url;
+      } else {
+        lbVid.style.display = 'none';
+        lbVid.pause();
+        lbImg.style.display = 'block';
+        lbImg.src = url;
+      }
 
-  /* Render thumbnails */
-  lbTh.innerHTML = media.map((m, i) => {
-    const src = isVideo(m) ? VIDEO_THUMB : m;
-    return `<img class="lightbox-thumb${i === lbI ? ' active' : ''}" src="${src}" data-idx="${i}" alt="" />`;
-  }).join('');
+      /* Render thumbnails */
+      lbTh.innerHTML = media.map((m, i) => {
+        const src = isVideo(m) ? VIDEO_THUMB : m;
+        return `<img class="lightbox-thumb${i === lbI ? ' active' : ''}" src="${src}" data-idx="${i}" alt="" />`;
+      }).join('');
 
-  /* Re-attach click listeners */
-  lbTh.querySelectorAll('.lightbox-thumb').forEach(t => {
-    t.addEventListener('click', () => {
-      lbI = parseInt(t.dataset.idx);
+      /* Re-attach click listeners */
+      lbTh.querySelectorAll('.lightbox-thumb').forEach(t => {
+        t.addEventListener('click', () => {
+          lbI = parseInt(t.dataset.idx);
+          renderLB();
+        });
+      });
+
+      /* Auto-scroll active thumbnail into center */
+      const activeThumb = lbTh.querySelector('.lightbox-thumb.active');
+      if (activeThumb) {
+        activeThumb.scrollIntoView({
+          behavior: 'smooth',
+          inline: 'center',
+          block: 'nearest'
+        });
+      }
+    }
+
+    document.getElementById('lb-close').addEventListener('click', closeLightbox);
+    document.getElementById('lb-prev').addEventListener('click', () => {
+      lbI = (lbI - 1 + PROJECTS[lbP].media.length) % PROJECTS[lbP].media.length;
       renderLB();
     });
-  });
-
-  /* Auto-scroll active thumbnail into center */
-  const activeThumb = lbTh.querySelector('.lightbox-thumb.active');
-  if (activeThumb) {
-    activeThumb.scrollIntoView({
-      behavior: 'smooth',
-      inline: 'center',
-      block: 'nearest'
+    document.getElementById('lb-next').addEventListener('click', () => {
+      lbI = (lbI + 1) % PROJECTS[lbP].media.length;
+      renderLB();
     });
-  }
-}
+    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
 
-document.getElementById('lb-close').addEventListener('click', closeLightbox);
-document.getElementById('lb-prev').addEventListener('click', () => {
-  lbI = (lbI - 1 + PROJECTS[lbP].media.length) % PROJECTS[lbP].media.length;
-  renderLB();
-});
-document.getElementById('lb-next').addEventListener('click', () => {
-  lbI = (lbI + 1) % PROJECTS[lbP].media.length;
-  renderLB();
-});
-lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+    /* Keyboard support */
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') document.getElementById('lb-prev').click();
+      if (e.key === 'ArrowRight') document.getElementById('lb-next').click();
+    });
 
-/* Keyboard support */
-document.addEventListener('keydown', e => {
-  if (!lb.classList.contains('active')) return;
-  if (e.key === 'Escape')      closeLightbox();
-  if (e.key === 'ArrowLeft')   document.getElementById('lb-prev').click();
-  if (e.key === 'ArrowRight')  document.getElementById('lb-next').click();
-}); 
-
-/* ════════════════════════════════════════════
-   TECH STACK RENDER
-   ════════════════════════════════════════════ */
-function renderTechStack() {
-  const grid = document.getElementById('tech-stack-grid');
-  if (!grid || typeof TECH_GROUPS === 'undefined') return;
-  let html = '';
-  TECH_GROUPS.forEach(group => {
-    html += `<div class="tech-separator">
+    /* ════════════════════════════════════════════
+       TECH STACK RENDER
+       ════════════════════════════════════════════ */
+    function renderTechStack() {
+      const grid = document.getElementById('tech-stack-grid');
+      if (!grid || typeof TECH_GROUPS === 'undefined') return;
+      let html = '';
+      TECH_GROUPS.forEach(group => {
+        html += `<div class="tech-separator">
       <span class="tech-separator-label">${group.label}</span>
       <span class="tech-separator-line"></span>
     </div>`;
-    group.items.forEach(item => {
-      html += `<div class="tech-badge">
+        group.items.forEach(item => {
+          html += `<div class="tech-badge">
         <span class="tb-icon"><img src="${item.icon}" alt="${item.name}" onerror="this.style.display='none'" loading="lazy" decoding="async" /></span>
         ${item.name}
       </div>`;
-    });
-  });
-  grid.innerHTML = html;
-}
+        });
+      });
+      grid.innerHTML = html;
+    }
 
 
-/* ════════════════════════════════════════════
-   BOOT — wait for deferred projects.js
-   projects.js is deferred, so PROJECTS and
-   TECH_GROUPS may not exist yet when this
-   inline script runs. We poll until they do.
-   ════════════════════════════════════════════ */
-function boot() {
-  if (typeof PROJECTS === 'undefined') {
-    setTimeout(boot, 30);
-    return;
-  }
-  renderProjects();
-  renderTechStack();        // this one is safe — it already checks for TECH_GROUPS
-}
-boot();
-</script>
+    /* ════════════════════════════════════════════
+       BOOT — wait for deferred projects.js
+       projects.js is deferred, so PROJECTS and
+       TECH_GROUPS may not exist yet when this
+       inline script runs. We poll until they do.
+       ════════════════════════════════════════════ */
+    function boot() {
+      if (typeof PROJECTS === 'undefined') {
+        setTimeout(boot, 30);
+        return;
+      }
+      renderProjects();
+      renderTechStack();        // this one is safe — it already checks for TECH_GROUPS
+    }
+    boot();
+
+    // Lightbox
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      const label = el.querySelector('.award-overlay span');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+      document.getElementById('lightbox-label').textContent = label ? label.textContent : '';
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
 </body>
+
 </html>
